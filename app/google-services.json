@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "57099911775",
+    "firebase_url": "https://medtalk-5be26.firebaseio.com",
+    "project_id": "medtalk-5be26",
+    "storage_bucket": "medtalk-5be26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57099911775:android:1ecee4358e33c247",
+        "android_client_info": {
+          "package_name": "app.izhang.medtalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57099911775-i5mn23g4lnpku4tlcaais7aehrk5oon1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.izhang.medtalk",
+            "certificate_hash": "8db630087200a01a2ac036deb3a878e9e4834bd2"
+          }
+        },
+        {
+          "client_id": "57099911775-bducoi58iml1atsvo01e4f6ebps1rai7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd1JBm6Ei9jkHU7Hdx6IVRGSyjEAZwADc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57099911775-bducoi58iml1atsvo01e4f6ebps1rai7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
