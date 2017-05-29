@@ -15,10 +15,12 @@ ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/ma
 		INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml
 application
 ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:5:5-19:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/ivanzhang/.android/build-cache/c71586c766257eba66e2139521c270993b91ffc4/output/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:25.3.1] /Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/ivanzhang/.android/build-cache/5ce3ec9fc99820f3ed692ce9fc140adb49c30e76/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/ivanzhang/.android/build-cache/e8c640c00d4de07c9aad97f20aaaca7a1fb257ea/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/ivanzhang/.android/build-cache/c71586c766257eba66e2139521c270993b91ffc4/output/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:transition:25.3.1] /Users/ivanzhang/.android/build-cache/e6dd8b99316f5b636c9c265e488a251942007d8a/output/AndroidManifest.xml:26:5-20
 MERGED from [com.google.firebase:firebase-core:10.0.1] /Users/ivanzhang/.android/build-cache/96449a8c487b81dd1061d80c0896fcadb8427d5f/output/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-analytics:10.0.1] /Users/ivanzhang/.android/build-cache/3093bdf21e2eb97355b7c349e213c3aecbd9203d/output/AndroidManifest.xml:24:5-33:19
 MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/ivanzhang/.android/build-cache/b698f85918cd934b4f308245679859258222a426/output/AndroidManifest.xml:24:5-28:19
@@ -60,12 +62,15 @@ ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/ma
 		ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:16:27-74
 uses-sdk
 INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/ivanzhang/.android/build-cache/5ce3ec9fc99820f3ed692ce9fc140adb49c30e76/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/ivanzhang/.android/build-cache/e8c640c00d4de07c9aad97f20aaaca7a1fb257ea/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/ivanzhang/.android/build-cache/c71586c766257eba66e2139521c270993b91ffc4/output/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-database:10.0.1] /Users/ivanzhang/.android/build-cache/abef90047450fde78b623cc3eadeca733031ab7e/output/AndroidManifest.xml:3:5-42
 MERGED from [com.google.firebase:firebase-database-connection:10.0.1] /Users/ivanzhang/.android/build-cache/101f9e71816fcbc895e659574f6b81c00cb4b806/output/AndroidManifest.xml:3:5-42
+MERGED from [com.android.support:design:25.3.1] /Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/ivanzhang/.android/build-cache/5ce3ec9fc99820f3ed692ce9fc140adb49c30e76/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/ivanzhang/.android/build-cache/e8c640c00d4de07c9aad97f20aaaca7a1fb257ea/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/ivanzhang/.android/build-cache/9d2a9333d5e15bc82dc879e01c5f5086578bfe98/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] /Users/ivanzhang/.android/build-cache/e6dd8b99316f5b636c9c265e488a251942007d8a/output/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-core:10.0.1] /Users/ivanzhang/.android/build-cache/96449a8c487b81dd1061d80c0896fcadb8427d5f/output/AndroidManifest.xml:4:5-42
 MERGED from [com.google.firebase:firebase-analytics:10.0.1] /Users/ivanzhang/.android/build-cache/3093bdf21e2eb97355b7c349e213c3aecbd9203d/output/AndroidManifest.xml:17:5-42
 MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/ivanzhang/.android/build-cache/b698f85918cd934b4f308245679859258222a426/output/AndroidManifest.xml:17:5-42
@@ -80,7 +85,7 @@ MERGED from [com.android.support:support-core-ui:25.3.1] /Users/ivanzhang/.andro
 MERGED from [com.android.support:support-core-utils:25.3.1] /Users/ivanzhang/.android/build-cache/ce40c10dee5d479c733597f2518b71abbeffdfbb/output/AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:25.3.1] /Users/ivanzhang/.android/build-cache/ce264bf37c1061d5eb1be639093988bb3aa7686a/output/AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:design:25.3.1] /Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml
@@ -88,9 +93,12 @@ MERGED from [com.android.support:support-compat:25.3.1] /Users/ivanzhang/.androi
 		INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.1] /Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/ivanzhang/.android/build-cache/5ce3ec9fc99820f3ed692ce9fc140adb49c30e76/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/ivanzhang/.android/build-cache/e8c640c00d4de07c9aad97f20aaaca7a1fb257ea/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/ivanzhang/.android/build-cache/9d2a9333d5e15bc82dc879e01c5f5086578bfe98/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] /Users/ivanzhang/.android/build-cache/e6dd8b99316f5b636c9c265e488a251942007d8a/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-v4:25.3.1] /Users/ivanzhang/.android/build-cache/4aa17774177985019adce8956ca5e378d1efaac7/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.1] /Users/ivanzhang/.android/build-cache/e7d113d25fea515fa4d8a5d14852d8bbc6c58ff1/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.1] /Users/ivanzhang/.android/build-cache/e3e9ef471145a60350d5a585e524556c312295e8/output/AndroidManifest.xml:25:5-27:34
@@ -98,9 +106,9 @@ MERGED from [com.android.support:support-core-ui:25.3.1] /Users/ivanzhang/.andro
 MERGED from [com.android.support:support-core-utils:25.3.1] /Users/ivanzhang/.android/build-cache/ce40c10dee5d479c733597f2518b71abbeffdfbb/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-compat:25.3.1] /Users/ivanzhang/.android/build-cache/ce264bf37c1061d5eb1be639093988bb3aa7686a/output/AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.1] /Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:appcompat-v7:25.3.1] /Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.1] /Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/AndroidManifest.xml:26:9-47
 uses-permission#android.permission.INTERNET
 ADDED from [com.google.firebase:firebase-analytics:10.0.1] /Users/ivanzhang/.android/build-cache/3093bdf21e2eb97355b7c349e213c3aecbd9203d/output/AndroidManifest.xml:20:5-66
 MERGED from [com.google.firebase:firebase-analytics-impl:10.0.1] /Users/ivanzhang/.android/build-cache/b698f85918cd934b4f308245679859258222a426/output/AndroidManifest.xml:20:5-66
