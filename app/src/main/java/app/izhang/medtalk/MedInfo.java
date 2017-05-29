@@ -8,7 +8,8 @@ import java.util.Map;
  */
 
 public class MedInfo {
-    private String name;
+    private String title;
+    private String secondTitle;
     private ArrayList<String> indications;
     private ArrayList<String> warnings;
     private Map<String, String> administration;
@@ -16,8 +17,8 @@ public class MedInfo {
     private Map<String, String> specialPopulations;
     private Map<String, String> sideEffects;
 
-    public MedInfo(String name, ArrayList indications, ArrayList warnings, Map administration, Map interactions, Map specialPopulations, Map sideEffects){
-        this.name = name;
+    public MedInfo(String title, ArrayList indications, ArrayList warnings, Map administration, Map interactions, Map specialPopulations, Map sideEffects){
+        this.title = title;
         this.indications = indications;
         this.warnings = warnings;
         this.administration = administration;
@@ -27,11 +28,11 @@ public class MedInfo {
     }
 
     public String getName() {
-        return name;
+        return title;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.title = name;
     }
 
     public ArrayList<String> getIndications() {
@@ -80,5 +81,13 @@ public class MedInfo {
 
     public void setSideEffects(Map<String, String> sideEffects) {
         this.sideEffects = sideEffects;
+    }
+
+    public String getSecondTitle() {
+        return secondTitle;
+    }
+
+    public void setSecondTitle(String secondTitle) {
+        this.secondTitle = secondTitle;
     }
 }
