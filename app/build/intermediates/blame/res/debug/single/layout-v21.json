@@ -1,17 +1,5 @@
 [
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout-v21/notification_action.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout-v21/notification_action_tombstone.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout-v21/notification_template_custom_big.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout-v21/notification_template_custom_big.xml"
     },
@@ -25,10 +13,6 @@
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout-v21/notification_template_icon_group.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout-v21/notification_template_icon_group.xml"
     }
 ]

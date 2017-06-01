@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_btn_colored_text_material.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
@@ -12,32 +8,12 @@
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_switch_thumb.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_spinner.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_seek_thumb.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_switch_track.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
@@ -64,23 +40,7 @@
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_default.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_btn_checkable.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_default.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/color-v23/abc_tint_edittext.xml"
     }
 ]

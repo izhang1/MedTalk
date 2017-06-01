@@ -1,19 +1,7 @@
 [
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-v21/abc_btn_colored_material.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-v21/notification_action_background.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-v21/notification_action_background.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
@@ -28,16 +16,12 @@
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-v21/abc_btn_colored_material.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/res/drawable-v21/avd_show_password.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",

@@ -1,13 +1,5 @@
 [
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
-        "source": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round.png",
-        "source": "/Users/ivanzhang/Documents/Application Development/MedTalk2/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round.png",
         "source": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
