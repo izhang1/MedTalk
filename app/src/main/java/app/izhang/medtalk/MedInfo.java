@@ -17,8 +17,9 @@ public class MedInfo {
     private Map<String, String> specialPopulations;
     private Map<String, String> sideEffects;
 
-    public MedInfo(String title, ArrayList indications, ArrayList warnings, Map administration, Map interactions, Map specialPopulations, Map sideEffects){
+    public MedInfo(String title, String secondTitle, ArrayList indications, ArrayList warnings, Map administration, Map interactions, Map specialPopulations, Map sideEffects){
         this.title = title;
+        this.secondTitle = secondTitle;
         this.indications = indications;
         this.warnings = warnings;
         this.administration = administration;
