@@ -16,12 +16,12 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     private LayoutInflater mInflater;
     private ArrayList<MedInfo> items;
-    private Homeactivity mActivity;
+    private MedListFragment mActivity;
 
-    public MedinfoCardViewAdapter(ArrayList<MedInfo> data, Homeactivity activity) {
+    public MedinfoCardViewAdapter(ArrayList<MedInfo> data, MedListFragment activity) {
         this.items = data;
         this.mActivity = activity;
-        this.mInflater = LayoutInflater.from(mActivity.getApplicationContext());
+        this.mInflater = LayoutInflater.from(mActivity.getContext());
     }
 
     public void addItem(MedInfo result) {
@@ -63,11 +63,15 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MedInfo model = items.get(position);
         // TODO: 5/14/17
-//        MessageViewHolder messageViewHolder = (MessageViewHolder) holder;
+        MessageViewHolder messageViewHolder = (MessageViewHolder) holder;
 //        messageViewHolder.imageViewIcon.setBackgroundResource(model.getImage());
 //        messageViewHolder.textViewName.setText(model.getName());
 //        messageViewHolder.textViewStatus.setText(model.getStatus());
-//        messageViewHolder.textViewMobile.setText(model.getMobile());
+//         messageViewHolder.textViewMobile.setText(model.getMobile());
+
+        messageViewHolder.textTitle.setText(model.getName());
+        messageViewHolder.textSubTitle.setText(model.getSecondTitle());
+
     }
 
     @Override
@@ -84,14 +88,16 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     private class MessageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView imageViewIcon;
-        private TextView textViewName;
-        private TextView textViewStatus;
+        private TextView textTitle;
+        private TextView textSubTitle;
         private TextView textViewMobile;
         private CardView cardView;
 
         private MessageViewHolder(View itemView, MedinfoCardViewAdapter adapter) {
             super(itemView);
-            // TODO: 5/14/17
+            textTitle = (TextView) itemView.findViewById(R.id.textTitle);
+            textSubTitle = (TextView) itemView.findViewById(R.id.textSubtitle);
+
 //            imageViewIcon = (ImageView) itemView.findViewById(R.id.imageViewIcon);
 //            textViewName = (TextView) itemView.findViewById(R.id.textViewName);
 //            textViewStatus = (TextView) itemView.findViewById(R.id.textViewStatus);
@@ -105,7 +111,7 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         public void onClick(View v) {
             final int pos = getAdapterPosition();
             if (pos >= 0) {
-                Toast.makeText(mActivity.getApplicationContext(), "Selected Item Position "+pos, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mActivity.getContext(), "Selected Item Position "+pos, Toast.LENGTH_SHORT).show();
             }
         }
     }

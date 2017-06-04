@@ -10,14 +10,14 @@ import java.util.Map;
 public class MedInfo {
     private String title;
     private String secondTitle;
-    private ArrayList<String> indications;
-    private ArrayList<String> warnings;
+    private Map<String, String> indications;
+    private Map<String, String> warnings;
     private Map<String, String> administration;
     private Map<String, String> interactions;
     private Map<String, String> specialPopulations;
     private Map<String, String> sideEffects;
 
-    public MedInfo(String title, String secondTitle, ArrayList indications, ArrayList warnings, Map administration, Map interactions, Map specialPopulations, Map sideEffects){
+    public MedInfo(String title, String secondTitle, Map indications, Map warnings, Map administration, Map interactions, Map specialPopulations, Map sideEffects){
         this.title = title;
         this.secondTitle = secondTitle;
         this.indications = indications;
@@ -36,19 +36,19 @@ public class MedInfo {
         this.title = name;
     }
 
-    public ArrayList<String> getIndications() {
+    public Map<String, String> getIndications() {
         return indications;
     }
 
-    public void setIndications(ArrayList<String> indications) {
+    public void setIndications(Map<String, String> indications) {
         this.indications = indications;
     }
 
-    public ArrayList<String> getWarnings() {
+    public Map<String, String> getWarnings() {
         return warnings;
     }
 
-    public void setWarnings(ArrayList<String> warnings) {
+    public void setWarnings(Map<String, String> warnings) {
         this.warnings = warnings;
     }
 

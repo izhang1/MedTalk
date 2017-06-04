@@ -3,13 +3,11 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardBackgroundColor="@color/cardview_light_background"
-    card_view:cardUseCompatPadding="true">
+    card_view:cardBackgroundColor="@color/cardview_light_background">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dp">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -18,7 +16,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="8dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp">
 
             <TextView
                 android:id="@+id/textTitle"
@@ -28,9 +28,9 @@
                 android:layout_alignParentTop="true"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="Time and Date"
+                android:text="Heading"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -41,7 +41,7 @@
                 android:layout_marginTop="5dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="Instructor or Student Name"
+                android:text="Subheading"
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp" />
 

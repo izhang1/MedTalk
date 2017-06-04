@@ -4,6 +4,10 @@
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/fragment_fav_list.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/res/layout/fragment_fav_list.xml"
+    },
+    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout/abc_screen_simple.xml"
     },
@@ -102,6 +106,10 @@
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/fragment_med_list.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/res/layout/fragment_med_list.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
