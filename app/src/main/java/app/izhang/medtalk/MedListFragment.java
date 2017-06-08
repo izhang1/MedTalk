@@ -88,6 +88,7 @@ public class MedListFragment extends Fragment {
                                         null,
                                         null);
         testData.add(medInfo);
+        testData.add(medInfo);
 
         MedinfoCardViewAdapter adapter = new MedinfoCardViewAdapter(testData, MedListFragment.this);
         medList.setAdapter(adapter);
