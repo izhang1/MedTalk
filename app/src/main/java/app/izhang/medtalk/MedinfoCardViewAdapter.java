@@ -97,6 +97,8 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             super(itemView);
             textTitle = (TextView) itemView.findViewById(R.id.textTitle);
             textSubTitle = (TextView) itemView.findViewById(R.id.textSubtitle);
+            TextView test = new TextView(itemView.getContext());
+            test.setText("Test");
 
 //            imageViewIcon = (ImageView) itemView.findViewById(R.id.imageViewIcon);
 //            textViewName = (TextView) itemView.findViewById(R.id.textViewName);
