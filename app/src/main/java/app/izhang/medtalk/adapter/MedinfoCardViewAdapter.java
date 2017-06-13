@@ -1,16 +1,21 @@
-package app.izhang.medtalk;
+package app.izhang.medtalk.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.*;
 import java.util.ArrayList;
+
+import app.izhang.medtalk.DetailMedView;
+import app.izhang.medtalk.MedInfo;
+import app.izhang.medtalk.MedListFragment;
+import app.izhang.medtalk.R;
 
 public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -70,7 +75,7 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 //         messageViewHolder.textViewMobile.setText(model.getMobile());
 
         messageViewHolder.textTitle.setText(model.getName());
-        messageViewHolder.textSubTitle.setText(model.getSecondTitle());
+        //messageViewHolder.textSubTitle.setText(model.getSecondTitle());
 
     }
 
@@ -96,7 +101,7 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         private MessageViewHolder(View itemView, MedinfoCardViewAdapter adapter) {
             super(itemView);
             textTitle = (TextView) itemView.findViewById(R.id.textTitle);
-            textSubTitle = (TextView) itemView.findViewById(R.id.textSubtitle);
+            //textSubTitle = (TextView) itemView.findViewById(R.id.textBrandName);
             TextView test = new TextView(itemView.getContext());
             test.setText("Test");
 
@@ -104,17 +109,17 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 //            textViewName = (TextView) itemView.findViewById(R.id.textViewName);
 //            textViewStatus = (TextView) itemView.findViewById(R.id.textViewStatus);
 //            textViewMobile = (TextView) itemView.findViewById(R.id.textViewMobile);
-//            cardView = (CardView) itemView.findViewById(R.id.cardView);
-//
-//            cardView.setOnClickListener(this);
+            cardView = (CardView) itemView.findViewById(R.id.cardView);
+
+            cardView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             final int pos = getAdapterPosition();
-            if (pos >= 0) {
-                Toast.makeText(mActivity.getContext(), "Selected Item Position "+pos, Toast.LENGTH_SHORT).show();
-            }
+            MedInfo medInfoObj = items.get(pos);
+            Intent detailViewIntent = new Intent(mActivity.getContext(), DetailMedView.class);
+            mActivity.startActivity(detailViewIntent);
         }
     }
 }

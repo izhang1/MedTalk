@@ -1,16 +1,17 @@
-package app.izhang.medtalk;
+package app.izhang.medtalk.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.*;
 import java.util.ArrayList;
+
+import app.izhang.medtalk.DetailMedView;
+import app.izhang.medtalk.MedInfo;
+import app.izhang.medtalk.R;
 
 public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
