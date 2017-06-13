@@ -47,6 +47,8 @@ public class Homeactivity extends AppCompatActivity implements MedListFragment.O
 //                .replace(R.id.content_frame, fragment,
 //                        "MedListFragment").commit();
 
+
+
     }
 
     @Override

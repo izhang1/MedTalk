@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:2:1-25:12
+ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:2:1-26:12
 	package
 		ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:3:5-33
 		INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/ma
 		INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml
 application
-ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:5:5-23:19
+ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:5:5-24:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/ivanzhang/.android/build-cache/c71586c766257eba66e2139521c270993b91ffc4/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.1] /Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/AndroidManifest.xml:29:5-20
@@ -62,13 +62,13 @@ ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/ma
 	android:name
 		ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:16:27-74
 activity#app.izhang.medtalk.DetailMedView
-ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:19:9-22:68
+ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:20:9-23:68
 	android:label
-		ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:21:13-67
+		ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:22:13-67
 	android:theme
-		ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:22:13-56
+		ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:23:13-56
 	android:name
-		ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:20:13-42
+		ADDED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml:21:13-42
 uses-sdk
 INJECTED from /Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/ivanzhang/.android/build-cache/c71586c766257eba66e2139521c270993b91ffc4/output/AndroidManifest.xml:5:5-7:41

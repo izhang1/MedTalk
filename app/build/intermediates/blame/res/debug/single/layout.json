@@ -152,6 +152,10 @@
         "source": "/Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/res/layout/design_navigation_item.xml"
     },
     {
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/detail_card_view.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/res/layout/detail_card_view.xml"
+    },
+    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout/abc_activity_chooser_view.xml"
     },
