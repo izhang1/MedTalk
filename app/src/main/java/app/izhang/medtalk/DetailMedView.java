@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,11 +21,7 @@ public class DetailMedView extends AppCompatActivity {
         setContentView(R.layout.activity_detail_med_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // Inflate the layout for this fragment
-        RecyclerView medList = (RecyclerView) findViewById(R.id.ListDetails);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 1);
-        medList.setLayoutManager(gridLayoutManager);
+        // Test Data
         ArrayList testData = new ArrayList<>();
 
         Map indications = new HashMap();
@@ -56,8 +53,20 @@ public class DetailMedView extends AppCompatActivity {
                 administration,
                 specialPopulations,
                 sideEffects);
-        testData.add(medInfo);
-        testData.add(medInfo);
+        testData.add(indications);
+        testData.add(administration);
+
+
+        // Initial Setup
+        setTitle(medInfo.getName());
+        TextView brandNameView = (TextView) findViewById(R.id.content_secondTitle);
+        brandNameView.setText(medInfo.getSecondTitle());
+
+        // Inflate the layout for this fragment
+        RecyclerView medList = (RecyclerView) findViewById(R.id.ListDetails);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 1);
+        medList.setLayoutManager(gridLayoutManager);
+
 
         DetailInfoCardViewAdapter adapter = new DetailInfoCardViewAdapter(testData, DetailMedView.this);
         medList.setAdapter(adapter);

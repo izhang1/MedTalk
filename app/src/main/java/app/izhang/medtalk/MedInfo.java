@@ -91,4 +91,6 @@ public class MedInfo {
     public void setSecondTitle(String secondTitle) {
         this.secondTitle = secondTitle;
     }
+
+
 }

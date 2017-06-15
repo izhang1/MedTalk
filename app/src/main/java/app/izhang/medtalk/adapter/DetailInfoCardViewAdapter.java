@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import app.izhang.medtalk.DetailMedView;
 import app.izhang.medtalk.MedInfo;
@@ -16,16 +17,16 @@ import app.izhang.medtalk.R;
 public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private LayoutInflater mInflater;
-    private ArrayList<MedInfo> items;
+    private ArrayList<Map> items;
     private DetailMedView mActivity;
 
-    public DetailInfoCardViewAdapter(ArrayList<MedInfo> data, DetailMedView activity) {
+    public DetailInfoCardViewAdapter(ArrayList<Map> data, DetailMedView activity) {
         this.items = data;
         this.mActivity = activity;
         this.mInflater = LayoutInflater.from(mActivity.getApplicationContext());
     }
 
-    public void addItem(MedInfo result) {
+    public void addItem(Map result) {
         items.add(result);
     }
 
@@ -33,13 +34,13 @@ public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView
         this.mInflater =layoutInflater;
     }
 
-    public void replaceItems(ArrayList<MedInfo> newItems) {
+    public void replaceItems(ArrayList<Map> newItems) {
         this.items.clear();
-        for(MedInfo item: newItems)
+        for(Map item: newItems)
             this.items.add(item);
     }
 
-    public void insertItem(MedInfo item) {
+    public void insertItem(Map item) {
         items.add(0, item);
     }
 
@@ -47,11 +48,11 @@ public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView
         items.clear();
     }
 
-    public void AddResults(ArrayList<MedInfo> result) {
+    public void AddResults(ArrayList<Map> result) {
         items.addAll(result);
     }
 
-    public MedInfo getItemsAt(int position){
+    public Map getItemsAt(int position){
         return  items.get(position);
     }
 
@@ -62,15 +63,13 @@ public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        MedInfo model = items.get(position);
+        Map model = items.get(position);
         // TODO: 5/14/17
         MessageViewHolder messageViewHolder = (MessageViewHolder) holder;
 //        messageViewHolder.imageViewIcon.setBackgroundResource(model.getImage());
 //        messageViewHolder.textViewName.setText(model.getName());
 //        messageViewHolder.textViewStatus.setText(model.getStatus());
 //         messageViewHolder.textViewMobile.setText(model.getMobile());
-
-        messageViewHolder.textTitle.setText(model.getName());
 
     }
 
