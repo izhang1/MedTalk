@@ -1,6 +1,8 @@
 package app.izhang.medtalk.adapter;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +11,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 import app.izhang.medtalk.DetailMedView;
-import app.izhang.medtalk.MedInfo;
 import app.izhang.medtalk.R;
 
 public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -63,13 +65,83 @@ public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        Map model = items.get(position);
+        Map <String, String> model = items.get(position);
+
         // TODO: 5/14/17
-        MessageViewHolder messageViewHolder = (MessageViewHolder) holder;
-//        messageViewHolder.imageViewIcon.setBackgroundResource(model.getImage());
-//        messageViewHolder.textViewName.setText(model.getName());
-//        messageViewHolder.textViewStatus.setText(model.getStatus());
-//         messageViewHolder.textViewMobile.setText(model.getMobile());
+        if(model != null) {
+            int currentTextView = 1;
+            MessageViewHolder messageViewHolder = (MessageViewHolder) holder;
+            ArrayList<TextView> textViews = ((MessageViewHolder) holder).getTextViews();
+            for (Map.Entry<String, String> entry : model.entrySet()) {
+                Log.v("Entry", entry.getKey() + " " + entry.getValue());
+                if (entry.getKey().equals("title")) {
+                    messageViewHolder.textTitle.setText(entry.getValue());
+                } else {
+                    switch(currentTextView){
+                        case 1:
+                            if(entry.getKey().equals("-")) {
+                                messageViewHolder.textView1.setText(entry.getKey() + " " + entry.getValue());
+                            }else{
+                                messageViewHolder.textView1.setText(entry.getKey() + ": " + entry.getValue());
+                            }
+                            messageViewHolder.textView1.setVisibility(View.VISIBLE);
+                            break;
+                        case 2:
+                            if(entry.getKey().equals("-")) {
+                                messageViewHolder.textView2.setText(entry.getKey() + " " + entry.getValue());
+                            }else{
+                                messageViewHolder.textView2.setText(entry.getKey() + ": " + entry.getValue());
+                            }
+                            messageViewHolder.textView2.setVisibility(View.VISIBLE);
+                            break;
+                        case 3:
+                            if(entry.getKey().equals("-")) {
+                                messageViewHolder.textView3.setText(entry.getKey() + " " + entry.getValue());
+                            }else{
+                                messageViewHolder.textView3.setText(entry.getKey() + ": " + entry.getValue());
+                            }
+                            messageViewHolder.textView3.setVisibility(View.VISIBLE);
+                            break;
+                        case 4:
+                            if(entry.getKey().equals("-")) {
+                                messageViewHolder.textView4.setText(entry.getKey() + " " + entry.getValue());
+                            }else{
+                                messageViewHolder.textView4.setText(entry.getKey() + ": " + entry.getValue());
+                            }
+                            messageViewHolder.textView4.setVisibility(View.VISIBLE);
+                            break;
+                        case 5:
+                            if(entry.getKey().equals("-")) {
+                                messageViewHolder.textView5.setText(entry.getKey() + " " + entry.getValue());
+                            }else{
+                                messageViewHolder.textView5.setText(entry.getKey() + ": " + entry.getValue());
+                            }
+                            messageViewHolder.textView5.setVisibility(View.VISIBLE);
+                            break;
+                        case 6:
+                            if(entry.getKey().equals("-")) {
+                                messageViewHolder.textView6.setText(entry.getKey() + " " + entry.getValue());
+                            }else{
+                                messageViewHolder.textView6.setText(entry.getKey() + ": " + entry.getValue());
+                            }
+                            messageViewHolder.textView6.setVisibility(View.VISIBLE);
+                            break;
+                        case 7:
+                            if(entry.getKey().equals("-")) {
+                                messageViewHolder.textView7.setText(entry.getKey() + " " + entry.getValue());
+                            }else{
+                                messageViewHolder.textView7.setText(entry.getKey() + ": " + entry.getValue());
+                            }
+                            messageViewHolder.textView7.setVisibility(View.VISIBLE);
+                            break;
+                    }
+
+                    currentTextView++;
+
+                }
+            }
+        }
+
 
     }
 
@@ -87,18 +159,40 @@ public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView
     private class MessageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView textTitle;
+        private TextView textView1;
+        private TextView textView2;
+        private TextView textView3;
+        private TextView textView4;
+        private TextView textView5;
+        private TextView textView6;
+        private TextView textView7;
+
+        private ArrayList<TextView> textViews;
+
+        private CardView cardView;
 
         private MessageViewHolder(View itemView, DetailInfoCardViewAdapter adapter) {
             super(itemView);
-            textTitle = (TextView) itemView.findViewById(R.id.textTitle);
+            textTitle = (TextView) itemView.findViewById(R.id.textView_title);
+            textView1 = (TextView) itemView.findViewById(R.id.textView_1);
+            textView2 = (TextView) itemView.findViewById(R.id.textView_2);
+            textView3 = (TextView) itemView.findViewById(R.id.textView_3);
+            textView4 = (TextView) itemView.findViewById(R.id.textView_4);
+            textView5 = (TextView) itemView.findViewById(R.id.textView_5);
+            textView6 = (TextView) itemView.findViewById(R.id.textView_6);
+            textView7 = (TextView) itemView.findViewById(R.id.textView_7);
 
-//            imageViewIcon = (ImageView) itemView.findViewById(R.id.imageViewIcon);
-//            textViewName = (TextView) itemView.findViewById(R.id.textViewName);
-//            textViewStatus = (TextView) itemView.findViewById(R.id.textViewStatus);
-//            textViewMobile = (TextView) itemView.findViewById(R.id.textViewMobile);
-//            cardView = (CardView) itemView.findViewById(R.id.cardView);
-//
-//            cardView.setOnClickListener(this);
+            textViews = new ArrayList<>();
+            textViews.add(textView7);
+            textViews.add(textView6);
+            textViews.add(textView5);
+            textViews.add(textView4);
+            textViews.add(textView3);
+            textViews.add(textView2);
+            textViews.add(textView1);
+
+            cardView = (CardView) itemView.findViewById(R.id.detail_card_view);
+            cardView.setOnClickListener(this);
         }
 
         @Override
@@ -107,6 +201,10 @@ public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView
             if (pos >= 0) {
                 Toast.makeText(mActivity.getApplicationContext(), "Selected Item Position "+pos, Toast.LENGTH_SHORT).show();
             }
+        }
+
+        private ArrayList getTextViews(){
+            return textViews;
         }
     }
 }

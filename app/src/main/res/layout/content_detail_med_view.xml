@@ -9,44 +9,29 @@
     tools:showIn="@layout/activity_detail_med_view">
 
     <TextView
-        android:id="@+id/secondTitle"
-        android:layout_width="121dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Brand Name: "
+        android:id="@+id/content_secondTitle"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="Content for Second Title"
+        android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteY="7dp" />
-
-    <TextView
-        android:id="@+id/content_secondTitle"
-        android:layout_width="223dp"
-        android:layout_height="26dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Content for Second Title"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintLeft_toRightOf="@+id/secondTitle"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/ListDetails"
-        android:layout_width="368dp"
+        android:layout_width="0dp"
         android:layout_height="468dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
-        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/content_secondTitle" />
 
 </android.support.constraint.ConstraintLayout>

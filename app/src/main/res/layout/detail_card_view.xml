@@ -3,6 +3,7 @@
     android:id="@+id/detail_card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
     card_view:cardBackgroundColor="@color/cardview_light_background">
 
     <RelativeLayout
@@ -15,17 +16,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="8dp"
             android:orientation="vertical"
             android:paddingBottom="6dp"
             android:paddingTop="6dp">
 
             <TextView
-                android:id="@+id/textTitle"
+                android:id="@+id/textView_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginLeft="4dp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="Heading"
@@ -33,6 +34,100 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/textView_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView_title"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:text="Test View"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView_1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:text="TextView"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView_2"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:text="TextView"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView_3"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:text="TextView"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView_4"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:text="TextView"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView_5"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:text="TextView"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView_6"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:text="TextView"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+
         </RelativeLayout>
+
     </RelativeLayout>
+
 </android.support.v7.widget.CardView>

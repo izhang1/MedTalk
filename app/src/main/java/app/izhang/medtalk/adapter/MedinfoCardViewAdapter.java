@@ -2,7 +2,6 @@ package app.izhang.medtalk.adapter;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -100,7 +99,7 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
         private MessageViewHolder(View itemView, MedinfoCardViewAdapter adapter) {
             super(itemView);
-            textTitle = (TextView) itemView.findViewById(R.id.textTitle);
+            textTitle = (TextView) itemView.findViewById(R.id.textView_title);
             //textSubTitle = (TextView) itemView.findViewById(R.id.textBrandName);
             TextView test = new TextView(itemView.getContext());
             test.setText("Test");

@@ -31,19 +31,26 @@ public class DetailMedView extends AppCompatActivity {
         Map specialPopulations = new HashMap();
         Map sideEffects = new HashMap();
 
-        indications.put("0", "high blood pressure/ heart failure");
-        warnings.put("0","May cause injury or death to developing fetus");
+        indications.put("-", "high blood pressure/ heart failure");
+        indications.put("title", "Indications");
+
+        warnings.put("-","May cause injury or death to developing fetus");
+        warnings.put("title", "Warnings");
 
         administration.put("Empty Stomach", "Take with or without food");
+        administration.put("title", "Administration");
 
         interactions.put("Food", "Avoid salt substitutes such as potassium cloride or other supplements which may raise potassium levels");
         interactions.put("Alcohol", "Alcohol may further decrease blood pressure");
         interactions.put("Drug", "Monitor levels of potassium with use of drugs that are proven to raise levels");
+        interactions.put("title", "Interactions");
 
         specialPopulations.put("Pregnancy/Lactation", "Pregnancy Category C...ectectect");
+        specialPopulations.put("title", "Special Populations");
 
         sideEffects.put("GI", "Cause damage to yo GI");
         sideEffects.put("Other", "Excess potassium in the blood....ectect");
+        sideEffects.put("title", "Side Effects");
 
         MedInfo medInfo = new MedInfo("Accupril",
                 "Quinapril",
@@ -53,8 +60,12 @@ public class DetailMedView extends AppCompatActivity {
                 administration,
                 specialPopulations,
                 sideEffects);
+
         testData.add(indications);
         testData.add(administration);
+        testData.add(warnings);
+        testData.add(specialPopulations);
+        testData.add(sideEffects);
 
 
         // Initial Setup
