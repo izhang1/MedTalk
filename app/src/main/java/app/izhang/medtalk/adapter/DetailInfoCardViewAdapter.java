@@ -198,9 +198,6 @@ public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView
         @Override
         public void onClick(View v) {
             final int pos = getAdapterPosition();
-            if (pos >= 0) {
-                Toast.makeText(mActivity.getApplicationContext(), "Selected Item Position "+pos, Toast.LENGTH_SHORT).show();
-            }
         }
 
         private ArrayList getTextViews(){
