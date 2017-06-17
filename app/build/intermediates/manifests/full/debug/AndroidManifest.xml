@@ -39,6 +39,7 @@
         <activity
             android:name="app.izhang.medtalk.DetailMedView"
             android:label="@string/title_activity_detail_med_view"
+            android:parentActivityName="app.izhang.medtalk.Homeactivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver
