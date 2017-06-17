@@ -16,6 +16,7 @@ public class MedInfo {
     private Map<String, String> interactions;
     private Map<String, String> specialPopulations;
     private Map<String, String> sideEffects;
+    private boolean isFavorite;
 
     public MedInfo(String title, String secondTitle, Map indications, Map warnings, Map administration, Map interactions, Map specialPopulations, Map sideEffects){
         this.title = title;
@@ -26,6 +27,7 @@ public class MedInfo {
         this.interactions = interactions;
         this.specialPopulations = specialPopulations;
         this.sideEffects = sideEffects;
+        this.isFavorite = false;
     }
 
     public String getName() {
@@ -93,4 +95,11 @@ public class MedInfo {
     }
 
 
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
 }
