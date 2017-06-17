@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -59,18 +60,24 @@ public class Homeactivity extends AppCompatActivity implements MedListFragment.O
         //noinspection SimplifiableIfStatement
         searchItem = menu.findItem(R.id.action_search);
         searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+
         SearchManager searchManager = (SearchManager) getApplication().getSystemService(SEARCH_SERVICE);
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+        searchView.setMaxWidth(Integer.MAX_VALUE); // Needed to have the search bar go the full width
+
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                Log.v("HomeActivity", "onQueryTextSubmit");
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-
+                Log.v("HomeActivity", "onQueryTextChange");
                 return false;
             }
         });
@@ -78,7 +85,8 @@ public class Homeactivity extends AppCompatActivity implements MedListFragment.O
         searchView.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
             public boolean onClose() {
-                return false;
+                Log.v("HomeActivity", "Query closed");
+                return true;
             }
         });
 
