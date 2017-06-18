@@ -72,6 +72,19 @@ public class Homeactivity extends AppCompatActivity implements MedListFragment.O
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Log.v("HomeActivity", "onQueryTextSubmit");
+
+                /**
+                 * FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                 Fragment newFragment = new SearchFragment(); //your search fragment
+                 Bundle args = new Bundle();
+                 args.putString("query_string", query);
+                 newFragment.setArguments(args);
+
+                 transaction.replace(R.id.content_frame, newFragment);
+                 transaction.addToBackStack(null);
+                 transaction.commit();
+                 */
+
                 return false;
             }
 
