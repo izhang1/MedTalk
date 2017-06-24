@@ -99,7 +99,7 @@ public class Homeactivity extends AppCompatActivity implements MedListFragment.O
             @Override
             public boolean onClose() {
                 Log.v("HomeActivity", "Query closed");
-                return true;
+                return false;
             }
         });
 
