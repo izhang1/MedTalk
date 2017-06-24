@@ -73,7 +73,7 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 //        messageViewHolder.textViewStatus.setText(model.getStatus());
 //         messageViewHolder.textViewMobile.setText(model.getMobile());
 
-        messageViewHolder.textTitle.setText(model.getName());
+        messageViewHolder.textTitle.setText(model.getGenericName());
         //messageViewHolder.textSubTitle.setText(model.getSecondTitle());
 
     }
