@@ -11,6 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +37,9 @@ public class MedListFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private static final String MED_INFO_KEY = "MED_INFO";
+    TinyDB db;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -67,6 +76,9 @@ public class MedListFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        db = new TinyDB(getContext());
+
     }
 
     @Override
@@ -80,6 +92,16 @@ public class MedListFragment extends Fragment {
         RecyclerView medList = (RecyclerView) view.findViewById(R.id.medList);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), 1);
         medList.setLayoutManager(gridLayoutManager);
+
+        ArrayList<MedInfo> medInfoList = new ArrayList<>();
+        medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
+        if(medInfoList.isEmpty()){
+            Log.v("MedListFragment", "Pulling Data");
+            pullDataFromFirebase();
+        }else{
+            // TODO: 6/24/17 Show data from firebase
+        }
+
         //ArrayList testData = new ArrayList<>();
 
 //        MedinfoCardViewAdapter adapter = new MedinfoCardViewAdapter(testData, MedListFragment.this);
@@ -125,6 +147,26 @@ public class MedListFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+    
+    public void pullDataFromFirebase(){
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Accupril");
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.child("AdministrationEmptyStomach").getValue().toString();
+                Log.v("MedListFragment", value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
 
