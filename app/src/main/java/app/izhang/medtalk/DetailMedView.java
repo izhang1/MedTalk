@@ -63,14 +63,6 @@ public class DetailMedView extends AppCompatActivity {
         sideEffects.put("Other", "Excess potassium in the blood....ectect");
         sideEffects.put("title", "Side Effects");
 
-        MedInfo medInfo = new MedInfo("Accupril",
-                "Quinapril",
-                indications,
-                warnings,
-                interactions,
-                administration,
-                specialPopulations,
-                sideEffects);
 
         testData.add(indications);
         testData.add(administration);
@@ -80,9 +72,9 @@ public class DetailMedView extends AppCompatActivity {
 
 
         // Initial Setup
-        setTitle(medInfo.getName());
-        TextView brandNameView = (TextView) findViewById(R.id.content_secondTitle);
-        brandNameView.setText(medInfo.getSecondTitle());
+//        setTitle(medInfo.getName());
+//        TextView brandNameView = (TextView) findViewById(R.id.content_secondTitle);
+//        brandNameView.setText(medInfo.getSecondTitle());
 
         // Inflate the layout for this fragment
         RecyclerView medList = (RecyclerView) findViewById(R.id.ListDetails);
