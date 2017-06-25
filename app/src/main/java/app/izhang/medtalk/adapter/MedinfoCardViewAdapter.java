@@ -73,8 +73,8 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 //        messageViewHolder.textViewStatus.setText(model.getStatus());
 //         messageViewHolder.textViewMobile.setText(model.getMobile());
 
-        messageViewHolder.textTitle.setText(model.getGenericName());
-        //messageViewHolder.textSubTitle.setText(model.getSecondTitle());
+        messageViewHolder.textTitle.setText(model.getTradename());
+        messageViewHolder.textSubTitle.setText(model.getGenericName());
 
     }
 
@@ -99,10 +99,8 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
         private MessageViewHolder(View itemView, MedinfoCardViewAdapter adapter) {
             super(itemView);
-            textTitle = (TextView) itemView.findViewById(R.id.textView_title);
-            //textSubTitle = (TextView) itemView.findViewById(R.id.textBrandName);
-            TextView test = new TextView(itemView.getContext());
-            test.setText("Test");
+            textTitle = (TextView) itemView.findViewById(R.id.tv_tradename);
+            textSubTitle = (TextView) itemView.findViewById(R.id.tv_genericname);
 
 //            imageViewIcon = (ImageView) itemView.findViewById(R.id.imageViewIcon);
 //            textViewName = (TextView) itemView.findViewById(R.id.textViewName);

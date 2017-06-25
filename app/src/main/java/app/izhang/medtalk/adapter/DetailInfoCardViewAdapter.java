@@ -7,11 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.PriorityQueue;
 
 import app.izhang.medtalk.DetailMedView;
 import app.izhang.medtalk.R;
@@ -173,7 +171,7 @@ public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView
 
         private MessageViewHolder(View itemView, DetailInfoCardViewAdapter adapter) {
             super(itemView);
-            textTitle = (TextView) itemView.findViewById(R.id.textView_title);
+            textTitle = (TextView) itemView.findViewById(R.id.tv_tradename);
             textView1 = (TextView) itemView.findViewById(R.id.textView_1);
             textView2 = (TextView) itemView.findViewById(R.id.textView_2);
             textView3 = (TextView) itemView.findViewById(R.id.textView_3);

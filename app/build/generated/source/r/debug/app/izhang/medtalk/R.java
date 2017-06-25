@@ -3370,7 +3370,6 @@ containing a value of this type.
         public static final int text2=0x7f0d00ac;
         public static final int textSpacerNoButtons=0x7f0d0059;
         public static final int textSpacerNoTitle=0x7f0d0058;
-        public static final int textSubtitle=0x7f0d0080;
         public static final int textView3=0x7f0d0097;
         public static final int textView_1=0x7f0d0090;
         public static final int textView_2=0x7f0d0091;
@@ -3379,7 +3378,6 @@ containing a value of this type.
         public static final int textView_5=0x7f0d0094;
         public static final int textView_6=0x7f0d0095;
         public static final int textView_7=0x7f0d0096;
-        public static final int textView_title=0x7f0d007f;
         public static final int text_input_password_toggle=0x7f0d008e;
         public static final int textinput_counter=0x7f0d0009;
         public static final int textinput_error=0x7f0d000a;
@@ -3393,6 +3391,8 @@ containing a value of this type.
         public static final int touch_outside=0x7f0d0085;
         public static final int transition_current_scene=0x7f0d000b;
         public static final int transition_scene_layoutid_cache=0x7f0d000c;
+        public static final int tv_genericname=0x7f0d0080;
+        public static final int tv_tradename=0x7f0d007f;
         public static final int up=0x7f0d000d;
         public static final int useLogo=0x7f0d0020;
         public static final int view_offset_helper=0x7f0d000e;

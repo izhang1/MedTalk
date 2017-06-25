@@ -18,8 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Iterator;
 
 import app.izhang.medtalk.adapter.MedinfoCardViewAdapter;
 
@@ -100,12 +99,10 @@ public class MedListFragment extends Fragment {
             pullDataFromFirebase();
         }else{
             // TODO: 6/24/17 Show data from firebase
+            MedinfoCardViewAdapter adapter = new MedinfoCardViewAdapter(medInfoList, MedListFragment.this);
+            medList.setAdapter(adapter);
         }
 
-        //ArrayList testData = new ArrayList<>();
-
-//        MedinfoCardViewAdapter adapter = new MedinfoCardViewAdapter(testData, MedListFragment.this);
-//        medList.setAdapter(adapter);
 
         return view;
     }
@@ -151,14 +148,27 @@ public class MedListFragment extends Fragment {
     
     public void pullDataFromFirebase(){
 
+        Log.v("MedListFragment", "Start Pulling Data");
+
+        // show loading screen
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Accupril");
+        final DatabaseReference myRef = database.getReference();
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.child("AdministrationEmptyStomach").getValue().toString();
-                Log.v("MedListFragment", value);
+                ArrayList<MedInfo> medInfos = new ArrayList<MedInfo>();
+                Iterator medIterator = dataSnapshot.getChildren().iterator();
+                while(medIterator.hasNext()){
+                    DataSnapshot tempDataSnapshot = (DataSnapshot) medIterator.next();
+                    MedInfo medInfo = tempDataSnapshot.getValue(MedInfo.class);
+                    medInfos.add(medInfo);
+
+                    Log.v("MedListFragment", "Pulling MedInfo: " + medInfo.getTradename());
+                }
+
+                db.putListObject(MED_INFO_KEY, medInfos);
+                Log.v("MedListFragment", "Stop Pulling Data");
             }
 
             @Override

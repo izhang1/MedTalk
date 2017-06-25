@@ -9,7 +9,7 @@ public class MedInfo {
 
     // Name
     private String GenericName;
-    private String TradeName;
+    private String Tradename;
 
     // Administration
     private String AdministrationEmptyStomach;
@@ -79,12 +79,12 @@ public class MedInfo {
         GenericName = genericName;
     }
 
-    public String getTradeName() {
-        return TradeName;
+    public String getTradename() {
+        return Tradename;
     }
 
-    public void setTradeName(String tradeName) {
-        TradeName = tradeName;
+    public void setTradename(String tradename) {
+        Tradename = tradename;
     }
 
     public String getAdministrationEmptyStomach() {
