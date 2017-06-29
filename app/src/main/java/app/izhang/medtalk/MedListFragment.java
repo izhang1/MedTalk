@@ -1,13 +1,19 @@
 package app.izhang.medtalk;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -38,7 +44,17 @@ public class MedListFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private static final String MED_INFO_KEY = "MED_INFO";
+
     TinyDB db;
+    MedinfoCardViewAdapter adapter;
+    RecyclerView medList;
+    ProgressDialog progress;
+
+    ArrayList<MedInfo> medInfoList;
+    ArrayList<MedInfo> searchList;
+    MedinfoCardViewAdapter searchAdapter;
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -77,6 +93,7 @@ public class MedListFragment extends Fragment {
         }
 
         db = new TinyDB(getContext());
+        setHasOptionsMenu(true);
 
     }
 
@@ -85,24 +102,25 @@ public class MedListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         Log.v("MedListFragment", "OnCreateView");
-        View view = inflater.inflate(R.layout.fragment_med_list, container, false);;
+        View view = inflater.inflate(R.layout.fragment_med_list, container, false);
 
         // Inflate the layout for this fragment
-        RecyclerView medList = (RecyclerView) view.findViewById(R.id.medList);
+        medList = (RecyclerView) view.findViewById(R.id.medList);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), 1);
         medList.setLayoutManager(gridLayoutManager);
 
-        ArrayList<MedInfo> medInfoList = new ArrayList<>();
+        medInfoList = new ArrayList<>();
         medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
         if(medInfoList.isEmpty()){
             Log.v("MedListFragment", "Pulling Data");
+            progress = new ProgressDialog(getContext());
             pullDataFromFirebase();
+
         }else{
             // TODO: 6/24/17 Show data from firebase
-            MedinfoCardViewAdapter adapter = new MedinfoCardViewAdapter(medInfoList, MedListFragment.this);
+            adapter = new MedinfoCardViewAdapter(medInfoList, MedListFragment.this);
             medList.setAdapter(adapter);
         }
-
 
         return view;
     }
@@ -145,10 +163,60 @@ public class MedListFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    @Override
+    public void onCreateOptionsMenu (Menu menu, MenuInflater inflater){
+        inflater.inflate(R.menu.search_menu, menu);
+        MenuItem item = menu.findItem(R.id.action_search);
+        SearchView sv = new SearchView(((Homeactivity) getActivity()).getSupportActionBar().getThemedContext());
+        MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW | MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
+        MenuItemCompat.setActionView(item, sv);
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                ArrayList<MedInfo> searchList = new ArrayList<>();
+
+                for(int i = 0; i < medInfoList.size(); i++){
+                    MedInfo temp = medInfoList.get(i);
+                    if(temp.getGenericName().contains(query) || temp.getTradename().contains(query)){
+                        searchList.add(temp);
+                    }
+                }
+
+                searchAdapter = new MedinfoCardViewAdapter(searchList, MedListFragment.this);
+                medList.setAdapter(searchAdapter);
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                ArrayList<MedInfo> searchList = new ArrayList<>();
+
+                for(int i = 0; i < medInfoList.size(); i++){
+                    MedInfo temp = medInfoList.get(i);
+                    if(temp.getGenericName().contains(newText) || temp.getTradename().contains(newText)){
+                        searchList.add(temp);
+                    }
+                }
+
+                searchAdapter = new MedinfoCardViewAdapter(searchList, MedListFragment.this);
+                medList.setAdapter(searchAdapter);
+
+                return false;
+            }
+        });
+    }
+
     
     public void pullDataFromFirebase(){
 
         Log.v("MedListFragment", "Start Pulling Data");
+
+        progress.setMessage("Downloading Medical Data");
+        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progress.setIndeterminate(false);
+        progress.show();
 
         // show loading screen
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -168,6 +236,12 @@ public class MedListFragment extends Fragment {
                 }
 
                 db.putListObject(MED_INFO_KEY, medInfos);
+
+                progress.dismiss();
+
+                adapter = new MedinfoCardViewAdapter(medInfos, MedListFragment.this);
+                medList.setAdapter(adapter);
+
                 Log.v("MedListFragment", "Stop Pulling Data");
             }
 
