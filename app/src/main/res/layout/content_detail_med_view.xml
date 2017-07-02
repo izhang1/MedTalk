@@ -1,37 +1,214 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="app.izhang.medtalk.DetailMedView"
-    tools:showIn="@layout/activity_detail_med_view">
+    android:id="@+id/detail_card_view"
+    android:layout_marginTop="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/content_secondTitle"
-        android:layout_width="0dp"
-        android:layout_height="21dp"
-        android:layout_marginEnd="16dp"
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_special"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        card_view:cardBackgroundColor="@color/cardview_light_background"
+        card_view:layout_constraintTop_toBottomOf="@+id/card_view_interation"
+        android:layout_marginRight="8dp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        card_view:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
-        android:text="Content for Second Title"
-        android:textAlignment="center"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="8dp">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/ListDetails"
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_sideeffects"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        card_view:cardBackgroundColor="@color/cardview_light_background"
+        card_view:layout_constraintTop_toBottomOf="@+id/card_view_special"
+        android:layout_marginRight="8dp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_warning"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        card_view:cardBackgroundColor="@color/cardview_light_background"
+        card_view:layout_constraintTop_toBottomOf="@+id/card_view_sideeffects"
+        android:layout_marginRight="8dp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_parameters"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        card_view:cardBackgroundColor="@color/cardview_light_background"
+        card_view:layout_constraintTop_toBottomOf="@+id/card_view_warning"
+        android:layout_marginRight="8dp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_additionalinfo"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        card_view:cardBackgroundColor="@color/cardview_light_background"
+        card_view:layout_constraintTop_toBottomOf="@+id/card_view_parameters"
+        android:layout_marginRight="8dp"
+        card_view:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        card_view:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_administration"
         android:layout_width="0dp"
-        android:layout_height="468dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintHorizontal_bias="0.437"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/content_secondTitle" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tv_admin_title"
+                android:layout_below="@+id/tv_admin_technique"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:text="Optimal technique is..." />
+
+            <TextView
+                android:id="@+id/tv_admin_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tv_admin_title"
+                android:layout_below="@+id/tv_admin_emptystomach_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="11dp"
+                android:text="Optimal Time:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_admin_technique"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tv_admin_title"
+                android:layout_below="@+id/tv_admin_time_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="10dp"
+                android:text="Technique: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_admin_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Administration"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_admin_emptystomach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tv_admin_title"
+                android:layout_below="@+id/tv_admin_title"
+                android:layout_margin="4dp"
+                android:text="Empty Stomach: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_admin_emptystomach_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tv_admin_title"
+                android:layout_below="@+id/tv_admin_emptystomach"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:text="Empty stomach this" />
+
+            <TextView
+                android:id="@+id/tv_admin_time_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tv_admin_time"
+                android:layout_below="@+id/tv_admin_time"
+                android:text="Optimal time is..." />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_interation"
+        android:layout_width="368dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_administration">
+
+
+    </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>

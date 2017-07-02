@@ -1,11 +1,13 @@
 package app.izhang.medtalk;
 
 
+import java.io.Serializable;
+
 /**
  * Created by ivanzhang on 5/27/17.
  */
 
-public class MedInfo {
+public class MedInfo implements Serializable{
 
     // Name
     private String GenericName;

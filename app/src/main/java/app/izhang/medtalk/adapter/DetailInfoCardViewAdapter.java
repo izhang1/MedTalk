@@ -171,26 +171,26 @@ public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView
 
         private MessageViewHolder(View itemView, DetailInfoCardViewAdapter adapter) {
             super(itemView);
-            textTitle = (TextView) itemView.findViewById(R.id.tv_tradename);
-            textView1 = (TextView) itemView.findViewById(R.id.textView_1);
-            textView2 = (TextView) itemView.findViewById(R.id.textView_2);
-            textView3 = (TextView) itemView.findViewById(R.id.textView_3);
-            textView4 = (TextView) itemView.findViewById(R.id.textView_4);
-            textView5 = (TextView) itemView.findViewById(R.id.textView_5);
-            textView6 = (TextView) itemView.findViewById(R.id.textView_6);
-            textView7 = (TextView) itemView.findViewById(R.id.textView_7);
-
-            textViews = new ArrayList<>();
-            textViews.add(textView7);
-            textViews.add(textView6);
-            textViews.add(textView5);
-            textViews.add(textView4);
-            textViews.add(textView3);
-            textViews.add(textView2);
-            textViews.add(textView1);
-
-            cardView = (CardView) itemView.findViewById(R.id.detail_card_view);
-            cardView.setOnClickListener(this);
+//            textTitle = (TextView) itemView.findViewById(R.id.tv_tradename);
+//            textView1 = (TextView) itemView.findViewById(R.id.textView_1);
+//            textView2 = (TextView) itemView.findViewById(R.id.textView_2);
+//            textView3 = (TextView) itemView.findViewById(R.id.textView_3);
+//            textView4 = (TextView) itemView.findViewById(R.id.textView_4);
+//            textView5 = (TextView) itemView.findViewById(R.id.textView_5);
+//            textView6 = (TextView) itemView.findViewById(R.id.textView_6);
+//            textView7 = (TextView) itemView.findViewById(R.id.textView_7);
+//
+//            textViews = new ArrayList<>();
+//            textViews.add(textView7);
+//            textViews.add(textView6);
+//            textViews.add(textView5);
+//            textViews.add(textView4);
+//            textViews.add(textView3);
+//            textViews.add(textView2);
+//            textViews.add(textView1);
+//
+//            cardView = (CardView) itemView.findViewById(R.id.detail_card_view);
+//            cardView.setOnClickListener(this);
         }
 
         @Override
