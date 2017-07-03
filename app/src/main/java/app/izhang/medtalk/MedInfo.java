@@ -312,4 +312,40 @@ public class MedInfo implements Serializable{
     public void setDiseaseSpecific3(String diseaseSpecific3) {
         DiseaseSpecific3 = diseaseSpecific3;
     }
+
+    @Override
+    public String toString(){
+        String str = "Generic Name: " + getGenericName() + "\n"
+                + "Trade Name: " + getTradename() + "\n"
+                + "Administration - Empty Stomach: " + getAdministrationEmptyStomach() + "\n"
+                + "Administration - Optimal Time: " + getAdministrationOptimaltimeofday() + "\n"
+                + "Administration - Shake Well: " + getAdministrationShakeWell() + "\n"
+                + "Administration - Technique: " + getAdministrationTechnique() + "\n"
+                + "Administration - REF: " + getREFAdministration() + "\n"
+                + "Interactions - Food" + getMajorFoodInteractionsFood() + "\n"
+                + "Interactions - Alcohol" + getMajorFoodInteractionsAlcohol() + "\n"
+                + "Interactions - Drugs" + getMajorDrugInteractions() + "\n"
+                + "Interactions - REF food" + getREFMajorDrugInteractions() + "\n"
+                + "Interactions - REF drugs" + getREFMajorFoodInteractions() + "\n"
+                + "Special populations - Age " + getSpecialPopulationsAge() + "\n"
+                + "Special populations - Pregnancy " + getSpecialPopulationsPregnancyLactation() + "\n"
+                + "Special populations - REF " + getREFSpecialPopulations() + "\n"
+                + "Side Effects - Sunlight " + getNotableSideEffectsSunlight() + "\n"
+                + "Side Effects - Sleepy " + getNotableSideEffectsSleepy() + "\n"
+                + "Side Effects - GI " + getNotableSideEffectsGI() + "\n"
+                + "Side Effects - Weight " + getNotableSideEffectsWeight() + "\n"
+                + "Side Effects - Blood Sugar " + getNotableSideEffectsBloodSugar() + "\n"
+                + "Side Effects - Other " + getNotableSideEffectsOther() + "\n"
+                + "Blackbox Warning " + getREFNotableSideEffects() + "\n"
+                + "Monitoring Params  " + getMonitoringParameters() + "\n"
+                + "Monitoring Params - REF " + getREFMonitoringParameters() + "\n"
+                + "Additional Information " + getAdditionalInformation() + "\n"
+                + "Additional Information - REF " + getREFAdditionalInformation() + "\n"
+                + "Disease Specific - 1 " + getDiseaseSpecific() + "\n"
+                + "Disease Specific - 2 " + getDiseaseSpecific2() + "\n"
+                + "Disease Specific - 3 " + getDiseaseSpecific3() + "\n"
+                + "Disease Specific - REF " + getREFDiseaseSpecific() + "\n";
+
+        return str;
+    }
 }
