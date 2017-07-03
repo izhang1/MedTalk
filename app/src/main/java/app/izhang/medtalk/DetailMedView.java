@@ -24,6 +24,7 @@ public class DetailMedView extends AppCompatActivity {
 
     private MenuItem favItem;
     private MedInfo currentMedInfo;
+    private int currentDBPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +36,14 @@ public class DetailMedView extends AppCompatActivity {
 
         Bundle passedMedInfoData = getIntent().getExtras();
         currentMedInfo = (MedInfo) passedMedInfoData.get("MEDINFO_OBJ");
+        currentDBPosition = passedMedInfoData.getInt("OBJ_POS");
+
         // Initial Setup
         setTitle(currentMedInfo.getTradename() + " | " + currentMedInfo.getGenericName());
 
         Log.v("DetailMedView", currentMedInfo.toString());
+        Log.v("DetailMedView", "DB Position: " + currentDBPosition);
+
 //        TextView brandNameView = (TextView) findViewById(R.id.content_secondTitle);
 //        brandNameView.setText(medInfo.getSecondTitle());
 
@@ -120,6 +125,9 @@ public class DetailMedView extends AppCompatActivity {
 
                 if(item.getIcon().getConstantState().equals(getResources().getDrawable(R.drawable.icon_star_filled).getConstantState())){
                     Log.v("DetailMedView", "Is Star Filled");
+                    // Change the value of this position in TinyDB
+                    // Add this list to the new Favorite List
+
                     item.setIcon(R.drawable.icon_star_outline);
 
                 }else{

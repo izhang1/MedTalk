@@ -3334,6 +3334,7 @@ containing a value of this type.
         public static final int right=0x7f0d0035;
         public static final int right_icon=0x7f0d00d8;
         public static final int right_side=0x7f0d00d3;
+        public static final int rv_favlist=0x7f0d00c7;
         public static final int screen=0x7f0d0028;
         public static final int scroll=0x7f0d0024;
         public static final int scrollIndicatorDown=0x7f0d005a;
@@ -3376,7 +3377,6 @@ containing a value of this type.
         public static final int text2=0x7f0d00dc;
         public static final int textSpacerNoButtons=0x7f0d0059;
         public static final int textSpacerNoTitle=0x7f0d0058;
-        public static final int textView3=0x7f0d00c7;
         public static final int text_input_password_toggle=0x7f0d00c5;
         public static final int textinput_counter=0x7f0d0009;
         public static final int textinput_error=0x7f0d000a;

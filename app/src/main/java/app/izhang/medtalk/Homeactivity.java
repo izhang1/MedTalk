@@ -1,27 +1,18 @@
 package app.izhang.medtalk;
 
-import android.app.SearchManager;
 import android.content.Context;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-
-public class Homeactivity extends AppCompatActivity implements MedListFragment.OnFragmentInteractionListener, FavListFragmnet.OnFragmentInteractionListener {
+public class Homeactivity extends AppCompatActivity implements MedListFragment.OnFragmentInteractionListener, FavListFragment.OnFragmentInteractionListener {
 
     SearchView searchView;
     MenuItem searchItem;
@@ -135,7 +126,7 @@ public class Homeactivity extends AppCompatActivity implements MedListFragment.O
                 case 0:
                     return MedListFragment.newInstance("0", "Page #1");
                 case 1: // Fragment # 0 - This will show FirstFragment
-                    return FavListFragmnet.newInstance("0", "Page #1");
+                    return FavListFragment.newInstance("0", "Page #1");
                 default:
                     return MedListFragment.newInstance("0", "Page #1");
             }
