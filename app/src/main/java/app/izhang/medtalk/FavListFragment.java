@@ -4,21 +4,27 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
+import app.izhang.medtalk.adapter.MedinfoCardViewAdapter;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link FavListFragmnet.OnFragmentInteractionListener} interface
+ * {@link FavListFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link FavListFragmnet#newInstance} factory method to
+ * Use the {@link FavListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FavListFragmnet extends Fragment {
+public class FavListFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -28,9 +34,17 @@ public class FavListFragmnet extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private static final String FAV_INFO_KEY = "FAV_INFO";
+
+    TinyDB db;
+    RecyclerView favList;
+    ArrayList<MedInfo> favInfoList;
+    MedinfoCardViewAdapter adapter;
+
+
     private OnFragmentInteractionListener mListener;
 
-    public FavListFragmnet() {
+    public FavListFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +54,11 @@ public class FavListFragmnet extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FavListFragmnet.
+     * @return A new instance of fragment FavListFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FavListFragmnet newInstance(String param1, String param2) {
-        FavListFragmnet fragment = new FavListFragmnet();
+    public static FavListFragment newInstance(String param1, String param2) {
+        FavListFragment fragment = new FavListFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,16 +73,34 @@ public class FavListFragmnet extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        db = new TinyDB(getContext());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        Log.v("FavListFragment", "OnCreateView");
+        Log.v("MedListFragment", "OnCreateView");
+        View view = inflater.inflate(R.layout.fragment_fav_list, container, false);
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fav_list, container, false);
+        favList = (RecyclerView) view.findViewById(R.id.rv_favlist);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), 1);
+        favList.setLayoutManager(gridLayoutManager);
+
+        favInfoList = new ArrayList<>();
+        favInfoList = db.getListObject(FAV_INFO_KEY, MedInfo.class);
+        if(favInfoList.isEmpty()){
+            Log.v("FavListFragment", "No data in the list");
+
+        }else{
+            // TODO: 6/24/17 Show data from firebase
+            adapter = new MedinfoCardViewAdapter(favInfoList, FavListFragment.this);
+            favList.setAdapter(adapter);
+        }
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

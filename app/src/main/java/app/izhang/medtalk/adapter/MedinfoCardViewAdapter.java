@@ -1,6 +1,7 @@
 package app.izhang.medtalk.adapter;
 
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.support.v7.widget.*;
 import java.util.ArrayList;
 
 import app.izhang.medtalk.DetailMedView;
+import app.izhang.medtalk.FavListFragment;
 import app.izhang.medtalk.MedInfo;
 import app.izhang.medtalk.MedListFragment;
 import app.izhang.medtalk.R;
@@ -20,9 +22,15 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     private LayoutInflater mInflater;
     private ArrayList<MedInfo> items;
-    private MedListFragment mActivity;
+    private Fragment mActivity;
 
     public MedinfoCardViewAdapter(ArrayList<MedInfo> data, MedListFragment activity) {
+        this.items = data;
+        this.mActivity = activity;
+        this.mInflater = LayoutInflater.from(mActivity.getContext());
+    }
+
+    public MedinfoCardViewAdapter(ArrayList<MedInfo> data, FavListFragment activity) {
         this.items = data;
         this.mActivity = activity;
         this.mInflater = LayoutInflater.from(mActivity.getContext());
@@ -117,6 +125,7 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             MedInfo medInfoObj = items.get(pos);
             Intent detailViewIntent = new Intent(mActivity.getContext(), DetailMedView.class);
             detailViewIntent.putExtra("MEDINFO_OBJ", medInfoObj);
+            detailViewIntent.putExtra("OBJ_POS", pos);
             mActivity.startActivity(detailViewIntent);
         }
     }
