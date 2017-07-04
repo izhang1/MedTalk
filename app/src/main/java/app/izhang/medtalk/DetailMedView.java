@@ -26,6 +26,13 @@ public class DetailMedView extends AppCompatActivity {
     private MedInfo currentMedInfo;
     private int currentDBPosition;
 
+    private static final String MED_INFO_KEY = "MED_INFO";
+    private static final String FAV_INFO_KEY = "FAV_INFO";
+
+    private ArrayList<Integer> favIndexList = new ArrayList<>();
+
+    TinyDB db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +47,8 @@ public class DetailMedView extends AppCompatActivity {
 
         // Initial Setup
         setTitle(currentMedInfo.getTradename() + " | " + currentMedInfo.getGenericName());
+
+        db = new TinyDB(this);
 
         Log.v("DetailMedView", currentMedInfo.toString());
         Log.v("DetailMedView", "DB Position: " + currentDBPosition);
@@ -117,6 +126,13 @@ public class DetailMedView extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         favItem = menu.findItem(R.id.action_fav);
+
+        // Set the icon state
+        if(currentMedInfo.isFavorite()){
+            Log.v("DetailMedView", "Current Med is a favorite, show that at the top");
+            favItem.setIcon(getResources().getDrawable(R.drawable.icon_star_filled));
+        }
+
         favItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -125,14 +141,51 @@ public class DetailMedView extends AppCompatActivity {
 
                 if(item.getIcon().getConstantState().equals(getResources().getDrawable(R.drawable.icon_star_filled).getConstantState())){
                     Log.v("DetailMedView", "Is Star Filled");
-                    // Change the value of this position in TinyDB
-                    // Add this list to the new Favorite List
+                    // The MedInfo is a favorite
+                    currentMedInfo.setFavorite(false);
+                    favIndexList = db.getListInt(FAV_INFO_KEY);
+                    // Remove the index from the favorite index list
+                    for(int i = 0; i < favIndexList.size(); i++){
+                        if(favIndexList.get(i) == currentDBPosition) {
+                            favIndexList.remove(i);
+                            break;
+                        }
+                    }
+
+                    Log.v("DetailMedView", "Remove from index. " + "Fav Index List size: " + favIndexList.size());
+
+
+                    // Replace the medinfo with new data
+                    ArrayList<MedInfo> medInfos = db.getListObject(MED_INFO_KEY, MedInfo.class);
+                    medInfos.set(currentDBPosition, currentMedInfo);
+
+                    // Saving the MedInfo list
+                    db.remove(MED_INFO_KEY);
+                    db.putListObject(MED_INFO_KEY, medInfos);
+
+                    // Saving the Favorite index list
+                    db.remove(FAV_INFO_KEY);
+                    db.putListInt(FAV_INFO_KEY, favIndexList);
 
                     item.setIcon(R.drawable.icon_star_outline);
 
                 }else{
 
-                    Log.v("DetailMedView", "Is Star Outline");
+                    // The MedInfo is not a favorite
+                    currentMedInfo.setFavorite(true);
+                    favIndexList = db.getListInt(FAV_INFO_KEY);
+
+                    favIndexList.add(currentDBPosition);
+
+                    ArrayList<MedInfo> medInfos = db.getListObject(MED_INFO_KEY, MedInfo.class);
+                    medInfos.set(currentDBPosition, currentMedInfo);
+                    db.remove(MED_INFO_KEY);
+                    db.putListObject(MED_INFO_KEY, medInfos);
+
+                    db.remove(FAV_INFO_KEY);
+                    db.putListInt(FAV_INFO_KEY, favIndexList);
+
+                    Log.v("DetailMedView", "Is Star Outline, set to favorite");
                     item.setIcon(R.drawable.icon_star_filled);
                 }
 

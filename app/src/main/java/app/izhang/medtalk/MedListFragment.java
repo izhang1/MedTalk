@@ -109,6 +109,12 @@ public class MedListFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), 1);
         medList.setLayoutManager(gridLayoutManager);
 
+        initView();
+
+        return view;
+    }
+
+    public void initView(){
         medInfoList = new ArrayList<>();
         medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
         if(medInfoList.isEmpty()){
@@ -117,12 +123,10 @@ public class MedListFragment extends Fragment {
             pullDataFromFirebase();
 
         }else{
-            // TODO: 6/24/17 Show data from firebase
+
             adapter = new MedinfoCardViewAdapter(medInfoList, MedListFragment.this);
             medList.setAdapter(adapter);
         }
-
-        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -130,6 +134,13 @@ public class MedListFragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        initView();
+
     }
 
     @Override

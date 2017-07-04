@@ -35,10 +35,15 @@ public class FavListFragment extends Fragment {
     private String mParam2;
 
     private static final String FAV_INFO_KEY = "FAV_INFO";
+    private static final String MED_INFO_KEY = "MED_INFO";
+
 
     TinyDB db;
     RecyclerView favList;
-    ArrayList<MedInfo> favInfoList;
+    ArrayList<Integer> favIndexList;
+    ArrayList<MedInfo> medInfoList;
+    ArrayList<MedInfo> favMedList;
+
     MedinfoCardViewAdapter adapter;
 
 
@@ -89,18 +94,28 @@ public class FavListFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), 1);
         favList.setLayoutManager(gridLayoutManager);
 
-        favInfoList = new ArrayList<>();
-        favInfoList = db.getListObject(FAV_INFO_KEY, MedInfo.class);
-        if(favInfoList.isEmpty()){
+        initView();
+
+        return view;
+    }
+
+    public void initView(){
+        favIndexList = new ArrayList<>();
+        favIndexList = db.getListInt(FAV_INFO_KEY);
+        if(favIndexList.isEmpty()){
             Log.v("FavListFragment", "No data in the list");
 
         }else{
-            // TODO: 6/24/17 Show data from firebase
-            adapter = new MedinfoCardViewAdapter(favInfoList, FavListFragment.this);
+            medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
+            favMedList = new ArrayList<>();
+            for(int i = 0; i < favIndexList.size(); i++){
+                favMedList.add(medInfoList.get(favIndexList.get(i)));
+            }
+
+            adapter = new MedinfoCardViewAdapter(favMedList, FavListFragment.this);
             favList.setAdapter(adapter);
         }
 
-        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -108,6 +123,13 @@ public class FavListFragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        initView();
     }
 
     @Override
