@@ -186,10 +186,10 @@ public class MedListFragment extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 ArrayList<MedInfo> searchList = new ArrayList<>();
-
+                query = query.toLowerCase();
                 for(int i = 0; i < medInfoList.size(); i++){
                     MedInfo temp = medInfoList.get(i);
-                    if(temp.getGenericName().contains(query) || temp.getTradename().contains(query)){
+                    if((temp.getGenericName().toLowerCase()).contains(query) || (temp.getTradename().toLowerCase()).contains(query)){
                         searchList.add(temp);
                     }
                 }
@@ -203,10 +203,11 @@ public class MedListFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 ArrayList<MedInfo> searchList = new ArrayList<>();
+                newText = newText.toLowerCase();
 
                 for(int i = 0; i < medInfoList.size(); i++){
                     MedInfo temp = medInfoList.get(i);
-                    if(temp.getGenericName().contains(newText) || temp.getTradename().contains(newText)){
+                    if(temp.getGenericName().toLowerCase().contains(newText) || temp.getTradename().toLowerCase().contains(newText)){
                         searchList.add(temp);
                     }
                 }

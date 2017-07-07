@@ -103,7 +103,15 @@ public class FavListFragment extends Fragment {
         favIndexList = new ArrayList<>();
         favIndexList = db.getListInt(FAV_INFO_KEY);
         if(favIndexList.isEmpty()){
-            Log.v("FavListFragment", "No data in the list");
+            medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
+            favMedList = new ArrayList<>();
+            for(int i = 0; i < favIndexList.size(); i++){
+                favMedList.add(medInfoList.get(favIndexList.get(i)));
+            }
+
+            adapter = new MedinfoCardViewAdapter(favMedList, FavListFragment.this);
+            favList.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
 
         }else{
             medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
@@ -114,6 +122,8 @@ public class FavListFragment extends Fragment {
 
             adapter = new MedinfoCardViewAdapter(favMedList, FavListFragment.this);
             favList.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+
         }
 
     }
@@ -128,7 +138,6 @@ public class FavListFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
-
         initView();
     }
 

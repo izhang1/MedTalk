@@ -51,7 +51,8 @@ public class DetailMedView extends AppCompatActivity {
         db = new TinyDB(this);
 
         Log.v("DetailMedView", currentMedInfo.toString());
-        Log.v("DetailMedView", "DB Position: " + currentDBPosition);
+
+
 
 //        TextView brandNameView = (TextView) findViewById(R.id.content_secondTitle);
 //        brandNameView.setText(medInfo.getSecondTitle());
@@ -136,13 +137,23 @@ public class DetailMedView extends AppCompatActivity {
         favItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                // TODO: 6/17/17 Implement the change in data
                 Log.v("DetailMedView", "GetItemID: " + item.getItemId());
 
+                ArrayList<MedInfo> medInfos = db.getListObject(MED_INFO_KEY, MedInfo.class);
+                for(int i = 0; i < medInfos.size(); i++){
+                    if(currentMedInfo.equals(medInfos.get(i))){
+                        currentDBPosition = i;
+                        break;
+                    }
+                }
+
+                Log.v("DetailMedView", "Current DB Position: " + currentDBPosition);
+
                 if(item.getIcon().getConstantState().equals(getResources().getDrawable(R.drawable.icon_star_filled).getConstantState())){
-                    Log.v("DetailMedView", "Is Star Filled");
+                    Log.v("DetailMedView", "This medicine is a favorite. Removing it from favorites.");
                     // The MedInfo is a favorite
                     currentMedInfo.setFavorite(false);
+
                     favIndexList = db.getListInt(FAV_INFO_KEY);
                     // Remove the index from the favorite index list
                     for(int i = 0; i < favIndexList.size(); i++){
@@ -154,9 +165,7 @@ public class DetailMedView extends AppCompatActivity {
 
                     Log.v("DetailMedView", "Remove from index. " + "Fav Index List size: " + favIndexList.size());
 
-
                     // Replace the medinfo with new data
-                    ArrayList<MedInfo> medInfos = db.getListObject(MED_INFO_KEY, MedInfo.class);
                     medInfos.set(currentDBPosition, currentMedInfo);
 
                     // Saving the MedInfo list
@@ -170,22 +179,24 @@ public class DetailMedView extends AppCompatActivity {
                     item.setIcon(R.drawable.icon_star_outline);
 
                 }else{
+                    Log.v("DetailMedView", "This medicine is NOT a favorite. Adding it from favorites.");
 
                     // The MedInfo is not a favorite
                     currentMedInfo.setFavorite(true);
                     favIndexList = db.getListInt(FAV_INFO_KEY);
 
+                    // Adding to favorite list
                     favIndexList.add(currentDBPosition);
 
-                    ArrayList<MedInfo> medInfos = db.getListObject(MED_INFO_KEY, MedInfo.class);
+                    // Saving the data
                     medInfos.set(currentDBPosition, currentMedInfo);
+
                     db.remove(MED_INFO_KEY);
                     db.putListObject(MED_INFO_KEY, medInfos);
 
                     db.remove(FAV_INFO_KEY);
                     db.putListInt(FAV_INFO_KEY, favIndexList);
 
-                    Log.v("DetailMedView", "Is Star Outline, set to favorite");
                     item.setIcon(R.drawable.icon_star_filled);
                 }
 

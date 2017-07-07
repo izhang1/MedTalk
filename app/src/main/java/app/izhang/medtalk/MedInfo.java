@@ -348,4 +348,16 @@ public class MedInfo implements Serializable{
 
         return str;
     }
+
+    public boolean equals(MedInfo medInfo){
+        if(this.getGenericName().equals(medInfo.getGenericName())
+                && this.getTradename().equals(medInfo.getTradename())
+                && this.getAdministrationOptimaltimeofday().equals(medInfo.getAdministrationOptimaltimeofday())
+                && this.getAdministrationEmptyStomach().equals(medInfo.getAdministrationEmptyStomach())
+                && this.getAdministrationTechnique().equals(medInfo.getAdministrationTechnique())) {
+            return true;
+        }
+
+        return false;
+    }
 }

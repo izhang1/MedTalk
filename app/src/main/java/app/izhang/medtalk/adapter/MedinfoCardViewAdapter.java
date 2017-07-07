@@ -125,7 +125,6 @@ public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             MedInfo medInfoObj = items.get(pos);
             Intent detailViewIntent = new Intent(mActivity.getContext(), DetailMedView.class);
             detailViewIntent.putExtra("MEDINFO_OBJ", medInfoObj);
-            detailViewIntent.putExtra("OBJ_POS", pos);
             mActivity.startActivity(detailViewIntent);
         }
     }
