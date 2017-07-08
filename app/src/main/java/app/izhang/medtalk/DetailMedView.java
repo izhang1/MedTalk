@@ -4,6 +4,7 @@ import android.app.SearchManager;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -12,7 +13,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,72 +56,360 @@ public class DetailMedView extends AppCompatActivity {
 
         Log.v("DetailMedView", currentMedInfo.toString());
 
+        // CardViews
+        CardView cv_admin = (CardView) this.findViewById(R.id.card_view_administration);
+        CardView cv_interaction = (CardView) this.findViewById(R.id.card_view_interaction);
+        CardView cv_additional = (CardView) this.findViewById(R.id.card_view_additionalinfo);
+        CardView cv_params = (CardView) this.findViewById(R.id.card_view_parameters);
+        CardView cv_sideeffects = (CardView) this.findViewById(R.id.card_view_sideeffects);
+        CardView cv_special = (CardView) this.findViewById(R.id.card_view_special);
+        CardView cv_warning = (CardView) this.findViewById(R.id.card_view_warning);
+
+        // TextViews Title
 
 
-//        TextView brandNameView = (TextView) findViewById(R.id.content_secondTitle);
-//        brandNameView.setText(medInfo.getSecondTitle());
-
-        // Inflate the layout for this fragment
-//        RecyclerView medList = (RecyclerView) findViewById(R.id.ListDetails);
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 1);
-//        medList.setLayoutManager(gridLayoutManager);
-
-
-        //DetailInfoCardViewAdapter adapter = new DetailInfoCardViewAdapter(testData, DetailMedView.this);
-        //medList.setAdapter(adapter);
-
+        // TextViews Content
+        // Administration
         TextView tv_admin_emptystomach = (TextView) findViewById(R.id.tv_admin_emptystomach_content);
+        TextView tv_admin_emptystomach_title = (TextView) findViewById(R.id.tv_admin_emptystomach);
+
         TextView tv_admin_optionaltime = (TextView) findViewById(R.id.tv_admin_time_content);
+        TextView tv_admin_optionaltime_title = (TextView) findViewById(R.id.tv_admin_time)
+;
         TextView tv_admin_technique = (TextView) findViewById(R.id.tv_admin_technique_content);
+        TextView tv_admin_technique_title = (TextView) findViewById(R.id.tv_admin_technique);
+
         TextView tv_admin_ref = (TextView) findViewById(R.id.tv_admin_ref_content);
+        TextView tv_admin_ref_title = (TextView) findViewById(R.id.tv_admin_ref);
+
+        // Interactions
         TextView tv_interaction_food = (TextView) findViewById(R.id.tv_interaction_food_content);
+        TextView tv_interaction_food_title = (TextView) findViewById(R.id.tv_interaction_food);
+
         TextView tv_interaction_alcohol = (TextView) findViewById(R.id.tv_interaction_alcohol_content);
+        TextView tv_interaction_alcohol_title = (TextView) findViewById(R.id.tv_interaction_alcohol);
+
         TextView tv_interaction_drugs = (TextView) findViewById(R.id.tv_interaction_drug_content);
+        TextView tv_interaction_drugs_title = (TextView) findViewById(R.id.tv_interaction_drug);
+
         TextView tv_interaction_others = (TextView) findViewById(R.id.tv_interaction_other_content);
+        TextView tv_interaction_others_title = (TextView) findViewById(R.id.tv_interaction_others);
+
+        // Special population
         TextView tv_special_age = (TextView) findViewById(R.id.tv_special_age_content);
+        TextView tv_special_age_title = (TextView) findViewById(R.id.tv_special_age_content);
+
         TextView tv_special_preg = (TextView) findViewById(R.id.tv_special_preg_content);
+        TextView tv_special_preg_title = (TextView) findViewById(R.id.tv_special_preg);
+
         TextView tv_special_others = (TextView) findViewById(R.id.tv_special_ref_content);
+        TextView tv_special_others_title = (TextView) findViewById(R.id.tv_special_ref);
+
+        // Side Effects
         TextView tv_sideeffects_sunlight = (TextView) findViewById(R.id.tv_side_sunlight_content);
+        TextView tv_sideeffects_sunlight_title = (TextView) findViewById(R.id.tv_side_sunlight);
+
         TextView tv_sideeffects_sleepy = (TextView) findViewById(R.id.tv_side_sleepy_content);
+        TextView tv_sideeffects_sleepy_title = (TextView) findViewById(R.id.tv_side_sleepy);
+
         TextView tv_sideeffects_gi = (TextView) findViewById(R.id.tv_side_gi_content);
+        TextView tv_sideeffects_gi_title = (TextView) findViewById(R.id.tv_side_GI);
+
         TextView tv_sideeffects_weight = (TextView) findViewById(R.id.tv_side_weight_content);
+        TextView tv_sideeffects_weight_title = (TextView) findViewById(R.id.tv_side_weight);
+
         TextView tv_sideeffects_bloodsugar = (TextView) findViewById(R.id.tv_side_bloodsugar_content);
+        TextView tv_sideeffects_bloodsugar_title = (TextView) findViewById(R.id.tv_side_bloodsugar);
+
+
+        // Parameters
         TextView tv_params_monitoring = (TextView) findViewById(R.id.tv_param_monitoring_content);
+        TextView tv_params_monitoring_title = (TextView) findViewById(R.id.tv_param_monitoring);
+
         TextView tv_params_others = (TextView) findViewById(R.id.tv_param_others_content);
+        TextView tv_params_others_title = (TextView) findViewById(R.id.tv_params_others);
+
+        // Diseases (Does not have titles)
         TextView tv_disease_specific1 = (TextView) findViewById(R.id.tv_disease_specific1_content);
         TextView tv_disease_specific2 = (TextView) findViewById(R.id.tv_disease_specific2_content);
         TextView tv_disease_specific3 = (TextView) findViewById(R.id.tv_disease_specific3_content);
+
+
+        // Additional information (Does not have titles)
         TextView additional_info = (TextView) findViewById(R.id.tv_additional_content);
 
-        tv_admin_emptystomach.setText(currentMedInfo.getAdministrationEmptyStomach());
-        tv_admin_optionaltime.setText(currentMedInfo.getAdministrationOptimaltimeofday());
-        tv_admin_technique.setText(currentMedInfo.getAdministrationTechnique());
-        tv_admin_ref.setText(currentMedInfo.getREFAdministration());
+        /**
+         *  If all admin is available, enable each individually.
+         */
+        int adminCount = 0;
+        String contentEmptyStomach = currentMedInfo.getAdministrationEmptyStomach();
+        if(contentEmptyStomach == null || contentEmptyStomach.equals("null") || contentEmptyStomach.isEmpty()){
+            tv_admin_emptystomach.setVisibility(View.GONE);
+            tv_admin_emptystomach_title.setVisibility(View.GONE);
+        }else{
+            tv_admin_emptystomach.setText(contentEmptyStomach);
+            adminCount++;
+        }
 
-        tv_interaction_food.setText(currentMedInfo.getMajorFoodInteractionsFood());
-        tv_interaction_alcohol.setText(currentMedInfo.getMajorFoodInteractionsAlcohol());
-        tv_interaction_drugs.setText(currentMedInfo.getMajorDrugInteractions());
-        tv_interaction_others.setText(currentMedInfo.getREFMajorFoodInteractions() + "\n" + currentMedInfo.getREFMajorDrugInteractions());
+        String contentOptimalTime = currentMedInfo.getAdministrationOptimaltimeofday();
+        if(contentOptimalTime == null || contentOptimalTime.equals("null") || contentOptimalTime.isEmpty()){
+            tv_admin_optionaltime.setVisibility(View.GONE);
+            tv_admin_optionaltime_title.setVisibility(View.GONE);
+        }else{
+            tv_admin_optionaltime.setText(contentOptimalTime);
+            adminCount++;
+        }
 
-        tv_special_age.setText(currentMedInfo.getSpecialPopulationsAge());
-        tv_special_preg.setText(currentMedInfo.getSpecialPopulationsPregnancyLactation());
-        tv_special_others.setText(currentMedInfo.getREFSpecialPopulations());
+        String contentTechnique = currentMedInfo.getAdministrationTechnique();
+        if(contentTechnique == null || contentTechnique.equals("null") || contentTechnique.isEmpty()){
+            tv_admin_technique.setVisibility(View.GONE);
+            tv_admin_technique_title.setVisibility(View.GONE);
+        }else{
+            tv_admin_technique.setText(contentTechnique);
+            adminCount++;
+        }
 
-        tv_sideeffects_sunlight.setText(currentMedInfo.getNotableSideEffectsSunlight());
-        tv_sideeffects_sleepy.setText(currentMedInfo.getNotableSideEffectsSleepy());
-        tv_sideeffects_gi.setText(currentMedInfo.getNotableSideEffectsGI());
-        tv_sideeffects_weight.setText(currentMedInfo.getNotableSideEffectsWeight());
-        tv_sideeffects_bloodsugar.setText(currentMedInfo.getNotableSideEffectsBloodSugar());
+        String contentREFAdmin = currentMedInfo.getREFAdministration();
+        if(contentREFAdmin == null || contentREFAdmin.equals("null") || contentREFAdmin.isEmpty()){
+            tv_admin_ref.setVisibility(View.GONE);
+            tv_admin_ref_title.setVisibility(View.GONE);
+        }else{
+            tv_admin_ref.setText(contentREFAdmin);
+            adminCount++;
+        }
 
-        tv_params_monitoring.setText(currentMedInfo.getMonitoringParameters());
-        tv_params_others.setText(currentMedInfo.getREFMonitoringParameters());
+        /**
+         *  Interactions setting content
+         */
+        int interactionCount = 0;
+        String contentFood = currentMedInfo.getMajorFoodInteractionsFood();
+        if(contentFood == null || contentFood.equals("null") || contentFood.isEmpty()){
+            tv_interaction_food.setVisibility(View.GONE);
+            tv_interaction_food_title.setVisibility(View.GONE);
+        }else{
+            tv_interaction_food.setText(contentFood);
+            interactionCount++;
+        }
 
-        tv_disease_specific1.setText(currentMedInfo.getDiseaseSpecific());
-        tv_disease_specific2.setText(currentMedInfo.getDiseaseSpecific2());
-        tv_disease_specific3.setText(currentMedInfo.getDiseaseSpecific3());
+        String contentAlcohol = currentMedInfo.getMajorFoodInteractionsAlcohol();
+        if(contentAlcohol == null || contentAlcohol.equals("null") || contentAlcohol.isEmpty()){
+            tv_interaction_alcohol.setVisibility(View.GONE);
+            tv_interaction_alcohol_title.setVisibility(View.GONE);
+        }else{
+            tv_interaction_alcohol.setText(contentAlcohol);
+            interactionCount++;
+        }
 
-        additional_info.setText(currentMedInfo.getAdditionalInformation() + "\n" + currentMedInfo.getREFAdditionalInformation());
+        String contentDrugs = currentMedInfo.getMajorDrugInteractions();
+        if(contentDrugs == null || contentDrugs.equals("null") || contentDrugs.isEmpty()){
+            tv_interaction_drugs.setVisibility(View.GONE);
+            tv_interaction_drugs_title.setVisibility(View.GONE);
+        }else{
+            tv_interaction_drugs.setText(contentDrugs);
+            interactionCount++;
+        }
 
+        // TODO: 7/8/17  this is messy. fix this.
+        String contentInterOthersAll = currentMedInfo.getREFMajorFoodInteractions() + "\n" + currentMedInfo.getREFMajorDrugInteractions();
+        String contentInterOthers = currentMedInfo.getREFMajorFoodInteractions();
+        if(contentInterOthers == null || contentInterOthers.equals("null") || contentInterOthers.isEmpty()){
+            tv_interaction_others.setVisibility(View.GONE);
+            tv_interaction_others_title.setVisibility(View.GONE);
+        }else{
+            tv_interaction_others.setText(contentInterOthersAll);
+            interactionCount++;
+        }
+
+        /**
+         *  Special populations setting content
+         */
+        int specialPopCount = 0;
+
+        String contentAge = currentMedInfo.getSpecialPopulationsAge();
+        if(contentAge == null || contentAge.equals("null") || contentAge.isEmpty()){
+            tv_special_age.setVisibility(View.GONE);
+            tv_special_age_title.setVisibility(View.GONE);
+        }else{
+            tv_special_age.setText(contentAge);
+            specialPopCount++;
+        }
+
+        String contentPreg = currentMedInfo.getSpecialPopulationsPregnancyLactation();
+        if(contentPreg == null || contentPreg.equals("null") || contentPreg.isEmpty()){
+            tv_special_preg.setVisibility(View.GONE);
+            tv_special_preg_title.setVisibility(View.GONE);
+        }else{
+            tv_special_preg.setText(contentPreg);
+            specialPopCount++;
+        }
+
+        String contentOthers = currentMedInfo.getREFSpecialPopulations();
+        if(contentOthers == null || contentOthers.equals("null") || contentOthers.isEmpty()){
+            tv_special_others.setVisibility(View.GONE);
+            tv_special_others_title.setVisibility(View.GONE);
+        }else{
+            tv_special_others.setText(contentOthers);
+            specialPopCount++;
+        }
+
+        /**
+         *  Side effects setting content
+         */
+        int sideEffectCount = 0;
+
+        String contentSunlight = currentMedInfo.getNotableSideEffectsSunlight();
+        if(contentSunlight == null || contentSunlight.equals("null") || contentSunlight.isEmpty()){
+            tv_sideeffects_sunlight.setVisibility(View.GONE);
+            tv_sideeffects_sunlight_title.setVisibility(View.GONE);
+        }else{
+            tv_sideeffects_sunlight.setText(contentSunlight);
+            sideEffectCount++;
+        }
+
+        String contentSleepy = currentMedInfo.getNotableSideEffectsSleepy();
+        if(contentSleepy == null || contentSleepy.equals("null") || contentSleepy.isEmpty()){
+            tv_sideeffects_sleepy.setVisibility(View.GONE);
+            tv_sideeffects_sleepy_title.setVisibility(View.GONE);
+        }else{
+            tv_sideeffects_sleepy.setText(contentSleepy);
+            sideEffectCount++;
+        }
+
+        String contentGI = currentMedInfo.getNotableSideEffectsGI();
+        if(contentGI == null || contentGI.equals("null") || contentGI.isEmpty()){
+            tv_sideeffects_gi.setVisibility(View.GONE);
+            tv_sideeffects_gi_title.setVisibility(View.GONE);
+        }else{
+            tv_sideeffects_gi.setText(contentGI);
+            sideEffectCount++;
+        }
+
+        String contentWeight = currentMedInfo.getNotableSideEffectsWeight();
+        if(contentWeight == null || contentWeight.equals("null") || contentWeight.isEmpty()){
+            tv_sideeffects_weight.setVisibility(View.GONE);
+            tv_sideeffects_weight_title.setVisibility(View.GONE);
+        }else{
+            tv_sideeffects_weight.setText(contentWeight);
+            sideEffectCount++;
+        }
+
+        String contentBloodSugar = currentMedInfo.getNotableSideEffectsBloodSugar();
+        if(contentBloodSugar == null || contentBloodSugar.equals("null") || contentBloodSugar.isEmpty()){
+            tv_sideeffects_bloodsugar.setVisibility(View.GONE);
+            tv_sideeffects_bloodsugar_title.setVisibility(View.GONE);
+        }else{
+            tv_sideeffects_bloodsugar.setText(contentBloodSugar);
+            sideEffectCount++;
+        }
+
+        /**
+         *  Parameters setting content
+         */
+        int paramsCount = 0;
+
+        String contentMonitoring = currentMedInfo.getMonitoringParameters();
+        if(contentMonitoring == null || contentMonitoring.equals("null") || contentMonitoring.isEmpty()){
+            tv_params_monitoring.setVisibility(View.GONE);
+            tv_params_monitoring_title.setVisibility(View.GONE);
+        }else{
+            tv_params_monitoring.setText(contentMonitoring);
+            paramsCount++;
+        }
+
+        String contentMonitoringREF = currentMedInfo.getREFMonitoringParameters();
+        if(contentMonitoringREF == null || contentMonitoringREF.equals("null") || contentMonitoringREF.isEmpty()){
+            tv_params_others.setVisibility(View.GONE);
+            tv_params_others_title.setVisibility(View.GONE);
+        }else{
+            tv_params_others.setText(contentMonitoringREF);
+            paramsCount++;
+        }
+
+
+        /**
+         *  Parameters setting content
+         */
+        int diseaseSpecificCount = 0;
+
+        String contentDisease1 = currentMedInfo.getDiseaseSpecific();
+        if(contentDisease1 == null || contentDisease1.equals("null") || contentDisease1.isEmpty()){
+            tv_disease_specific1.setVisibility(View.GONE);
+        }else{
+            tv_disease_specific1.setText(contentDisease1);
+            diseaseSpecificCount++;
+        }
+
+        String contentDisease2 = currentMedInfo.getDiseaseSpecific2();
+        if(contentDisease2 == null || contentDisease2.equals("null") || contentDisease2.isEmpty()){
+            tv_disease_specific2.setVisibility(View.GONE);
+        }else{
+            tv_disease_specific2.setText(contentDisease2);
+            diseaseSpecificCount++;
+        }
+
+        String contentDisease3 = currentMedInfo.getDiseaseSpecific3();
+        if(contentDisease3 == null || contentDisease3.equals("null") || contentDisease3.isEmpty()){
+            tv_disease_specific3.setVisibility(View.GONE);
+        }else{
+            tv_disease_specific3.setText(contentDisease3);
+            diseaseSpecificCount++;
+        }
+
+
+        /**
+         *  Additional information setting content
+         */
+        int additionalCount = 0;
+
+        String combinedContent = "";
+        String contentAdditional =  currentMedInfo.getAdditionalInformation();
+        String contentAdditionalREF = currentMedInfo.getREFAdditionalInformation();
+        if (contentAdditional == null || contentAdditional.isEmpty() || contentAdditional.equals("null")) {
+
+        }else{
+            combinedContent += contentAdditional;
+            additionalCount++;
+        }
+
+        if (contentAdditionalREF == null || contentAdditionalREF.isEmpty() || contentAdditionalREF.equals("null")) {
+
+        }else{
+            combinedContent = combinedContent + "\n" + contentAdditionalREF;
+            additionalCount++;
+        }
+
+        additional_info.setText(combinedContent);
+
+        /**
+         * Cardview Visibility Setting
+         */
+        if(adminCount == 0){
+            cv_admin.setVisibility(View.GONE);
+        }
+
+        if(interactionCount == 0){
+            cv_interaction.setVisibility(View.GONE);
+        }
+
+        if(additionalCount == 0){
+            cv_additional.setVisibility(View.GONE);
+        }
+
+        if(diseaseSpecificCount == 0){
+            cv_warning.setVisibility(View.GONE);
+        }
+
+        if(paramsCount == 0){
+            cv_params.setVisibility(View.GONE);
+        }
+
+        if(specialPopCount == 0){
+            cv_special.setVisibility(View.GONE);
+        }
+
+        if(sideEffectCount == 0){
+            cv_sideeffects.setVisibility(View.GONE);
+        }
     }
 
     @Override
