@@ -97,7 +97,7 @@ public class DetailMedView extends AppCompatActivity {
 
         // Special population
         TextView tv_special_age = (TextView) findViewById(R.id.tv_special_age_content);
-        TextView tv_special_age_title = (TextView) findViewById(R.id.tv_special_age_content);
+        TextView tv_special_age_title = (TextView) findViewById(R.id.tv_special_age);
 
         TextView tv_special_preg = (TextView) findViewById(R.id.tv_special_preg_content);
         TextView tv_special_preg_title = (TextView) findViewById(R.id.tv_special_preg);
@@ -120,6 +120,9 @@ public class DetailMedView extends AppCompatActivity {
 
         TextView tv_sideeffects_bloodsugar = (TextView) findViewById(R.id.tv_side_bloodsugar_content);
         TextView tv_sideeffects_bloodsugar_title = (TextView) findViewById(R.id.tv_side_bloodsugar);
+
+        TextView tv_sideeffects_others = (TextView) findViewById(R.id.tv_side_others_content);
+        TextView tv_sideeffects_others_title = (TextView) findViewById(R.id.tv_side_others);
 
 
         // Parameters
@@ -302,6 +305,15 @@ public class DetailMedView extends AppCompatActivity {
             sideEffectCount++;
         }
 
+        String contentOthersSide = currentMedInfo.getNotableSideEffectsOther();
+        if(contentOthersSide == null || contentOthersSide.equals("null") || contentOthersSide.isEmpty()){
+            tv_sideeffects_others.setVisibility(View.GONE);
+            tv_sideeffects_others_title.setVisibility(View.GONE);
+        }else{
+            tv_sideeffects_others.setText(contentOthersSide);
+            sideEffectCount++;
+        }
+
         /**
          *  Parameters setting content
          */
@@ -374,7 +386,11 @@ public class DetailMedView extends AppCompatActivity {
         if (contentAdditionalREF == null || contentAdditionalREF.isEmpty() || contentAdditionalREF.equals("null")) {
 
         }else{
-            combinedContent = combinedContent + "\n" + contentAdditionalREF;
+            if(combinedContent.equals("")){
+                combinedContent +=  contentAdditionalREF;
+            }else{
+                combinedContent = combinedContent + "\n" + contentAdditionalREF;
+            }
             additionalCount++;
         }
 

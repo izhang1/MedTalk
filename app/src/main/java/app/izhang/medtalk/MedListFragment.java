@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -48,7 +49,7 @@ public class MedListFragment extends Fragment {
     TinyDB db;
     MedinfoCardViewAdapter adapter;
     RecyclerView medList;
-    ProgressDialog progress;
+    ProgressBar progress;
 
     ArrayList<MedInfo> medInfoList;
     ArrayList<MedInfo> searchList;
@@ -104,6 +105,9 @@ public class MedListFragment extends Fragment {
         Log.v("MedListFragment", "OnCreateView");
         View view = inflater.inflate(R.layout.fragment_med_list, container, false);
 
+        // Progress Bar
+        progress = (ProgressBar) view.findViewById(R.id.progressBar);
+
         // Inflate the layout for this fragment
         medList = (RecyclerView) view.findViewById(R.id.medList);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), 1);
@@ -119,11 +123,10 @@ public class MedListFragment extends Fragment {
         medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
         if(medInfoList.isEmpty()){
             Log.v("MedListFragment", "Pulling Data");
-            progress = new ProgressDialog(getContext());
+            medList.setVisibility(View.INVISIBLE);
             pullDataFromFirebase();
 
         }else{
-
             adapter = new MedinfoCardViewAdapter(medInfoList, MedListFragment.this);
             medList.setAdapter(adapter);
         }
@@ -225,11 +228,6 @@ public class MedListFragment extends Fragment {
 
         Log.v("MedListFragment", "Start Pulling Data");
 
-        progress.setMessage("Downloading Medical Data");
-        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        progress.setIndeterminate(false);
-        progress.show();
-
         // show loading screen
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference();
@@ -237,6 +235,7 @@ public class MedListFragment extends Fragment {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                progress.setVisibility(View.VISIBLE);
                 ArrayList<MedInfo> medInfos = new ArrayList<MedInfo>();
                 Iterator medIterator = dataSnapshot.getChildren().iterator();
                 while(medIterator.hasNext()){
@@ -249,12 +248,13 @@ public class MedListFragment extends Fragment {
 
                 db.putListObject(MED_INFO_KEY, medInfos);
 
-                progress.dismiss();
-
                 adapter = new MedinfoCardViewAdapter(medInfos, MedListFragment.this);
                 medList.setAdapter(adapter);
 
+                medList.setVisibility(View.VISIBLE);
+                progress.setVisibility(View.INVISIBLE);
                 Log.v("MedListFragment", "Stop Pulling Data");
+
             }
 
             @Override
