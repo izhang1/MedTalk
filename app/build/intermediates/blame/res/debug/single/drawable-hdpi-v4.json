@@ -24,12 +24,12 @@
         "source": "/Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/res/drawable-hdpi-v4/design_ic_visibility.png"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-hdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png",

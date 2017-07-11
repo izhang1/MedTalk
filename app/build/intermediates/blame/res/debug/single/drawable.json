@@ -1,19 +1,15 @@
 [
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_ratingbar_small_material.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_btn_borderless_material.xml"
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
+        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_ratingbar_small_material.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_edit_text_material.xml"
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_btn_borderless_material.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
@@ -28,8 +24,8 @@
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/design_password_eye.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/res/drawable/design_password_eye.xml"
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/ripple.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/res/drawable/ripple.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
@@ -60,6 +56,10 @@
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_seekbar_tick_mark_material.xml"
     },
     {
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/menu_ripple.xml",
+        "source": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/res/drawable/menu_ripple.xml"
+    },
+    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_btn_check_material.xml"
     },
@@ -70,10 +70,6 @@
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_ic_clear_material.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_btn_colored_material.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
@@ -158,10 +154,6 @@
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/drawable/abc_dialog_material_background.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/design_bottom_navigation_item_background.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/res/drawable/design_bottom_navigation_item_background.xml"
     },
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",

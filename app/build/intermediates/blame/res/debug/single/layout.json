@@ -140,10 +140,6 @@
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout/notification_template_lines_media.xml"
     },
     {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout/notification_action_tombstone.xml"
-    },
-    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout/abc_list_menu_item_icon.xml"
     },
@@ -234,13 +230,5 @@
     {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
         "source": "/Users/ivanzhang/.android/build-cache/8f3ad624fbbcdefd892edcdca1ea8d08be4404e1/output/res/layout/design_navigation_menu_item.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout/notification_template_icon_group.xml"
-    },
-    {
-        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
-        "source": "/Users/ivanzhang/.android/build-cache/8a0094070aff033c435147e90b1a5b62bf5eae14/output/res/layout/notification_action.xml"
     }
 ]
