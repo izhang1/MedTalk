@@ -2,6 +2,7 @@ package app.izhang.medtalk;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -183,6 +184,7 @@ public class MedListFragment extends Fragment {
         inflater.inflate(R.menu.search_menu, menu);
         MenuItem item = menu.findItem(R.id.action_search);
         SearchView sv = new SearchView(((Homeactivity) getActivity()).getSupportActionBar().getThemedContext());
+        sv.setBackground(getResources().getDrawable(R.drawable.ripple));
         MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW | MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
         MenuItemCompat.setActionView(item, sv);
         sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
