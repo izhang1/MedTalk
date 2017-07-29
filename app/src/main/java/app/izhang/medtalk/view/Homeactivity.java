@@ -1,4 +1,4 @@
-package app.izhang.medtalk;
+package app.izhang.medtalk.view;
 
 import android.content.Context;
 import android.net.Uri;
@@ -9,13 +9,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
-import android.view.MenuItem;
+
+import app.izhang.medtalk.R;
+
+
 
 public class Homeactivity extends AppCompatActivity implements MedListFragment.OnFragmentInteractionListener, FavListFragment.OnFragmentInteractionListener {
-
-    SearchView searchView;
-    MenuItem searchItem;
 
 
     @Override

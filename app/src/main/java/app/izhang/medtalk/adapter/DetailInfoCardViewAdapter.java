@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Map;
 
-import app.izhang.medtalk.DetailMedView;
+import app.izhang.medtalk.view.DetailMedView;
 import app.izhang.medtalk.R;
 
 public class DetailInfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

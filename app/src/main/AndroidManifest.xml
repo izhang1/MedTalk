@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Homeactivity"
+        <activity android:name=".view.Homeactivity"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +20,9 @@
         </activity>
 
         <activity
-            android:name=".DetailMedView"
+            android:name=".view.DetailMedView"
             android:label="@string/title_activity_detail_med_view"
-            android:parentActivityName=".Homeactivity"
+            android:parentActivityName=".view.Homeactivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

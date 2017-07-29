@@ -1,10 +1,13 @@
-package app.izhang.medtalk;
+package app.izhang.medtalk.model;
 
 
 import java.io.Serializable;
 
 /**
  * Created by ivanzhang on 5/27/17.
+ *
+ * MedInfo model, takes the data and creates an object that is saved and then reused to display data from Firebase and TinyDB
+ *
  */
 
 public class MedInfo implements Serializable{

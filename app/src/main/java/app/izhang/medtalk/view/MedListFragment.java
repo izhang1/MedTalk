@@ -1,8 +1,6 @@
-package app.izhang.medtalk;
+package app.izhang.medtalk.view;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -28,17 +26,20 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import app.izhang.medtalk.R;
 import app.izhang.medtalk.adapter.MedinfoCardViewAdapter;
+import app.izhang.medtalk.model.MedInfo;
+import app.izhang.medtalk.model.TinyDB;
 
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link MedListFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link MedListFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Created by ivanzhang on 5/27/17.
+ *
+ * FavListFragment
+ * - Displays a list of all medicine and search view
+ *
  */
+
 public class MedListFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

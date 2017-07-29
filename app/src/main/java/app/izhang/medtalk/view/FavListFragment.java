@@ -1,4 +1,4 @@
-package app.izhang.medtalk;
+package app.izhang.medtalk.view;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,17 +13,21 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import app.izhang.medtalk.R;
 import app.izhang.medtalk.adapter.MedinfoCardViewAdapter;
+import app.izhang.medtalk.model.MedInfo;
+import app.izhang.medtalk.model.TinyDB;
+
 
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link FavListFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link FavListFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Created by ivanzhang on 5/27/17.
+ *
+ * FavListFragment
+ * - Displays the favorite medicine
+ *
  */
+
 public class FavListFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

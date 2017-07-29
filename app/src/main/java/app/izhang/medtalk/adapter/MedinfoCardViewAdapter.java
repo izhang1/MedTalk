@@ -12,10 +12,10 @@ import android.widget.TextView;
 import android.support.v7.widget.*;
 import java.util.ArrayList;
 
-import app.izhang.medtalk.DetailMedView;
-import app.izhang.medtalk.FavListFragment;
-import app.izhang.medtalk.MedInfo;
-import app.izhang.medtalk.MedListFragment;
+import app.izhang.medtalk.view.DetailMedView;
+import app.izhang.medtalk.view.FavListFragment;
+import app.izhang.medtalk.model.MedInfo;
+import app.izhang.medtalk.view.MedListFragment;
 import app.izhang.medtalk.R;
 
 public class MedinfoCardViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

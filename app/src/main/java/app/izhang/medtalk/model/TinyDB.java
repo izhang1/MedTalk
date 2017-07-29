@@ -1,4 +1,4 @@
-package app.izhang.medtalk;
+package app.izhang.medtalk.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,6 +19,15 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 
+import app.izhang.medtalk.model.MedInfo;
+
+/**
+ *
+ * Imported class from TinyDB
+ * - Takes care of SharedPreferenced data interaction.
+ * - https://android-arsenal.com/details/1/3805
+ *
+ */
 
 public class TinyDB {
 

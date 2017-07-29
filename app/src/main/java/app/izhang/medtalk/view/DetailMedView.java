@@ -1,4 +1,4 @@
-package app.izhang.medtalk;
+package app.izhang.medtalk.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,18 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import app.izhang.medtalk.R;
+import app.izhang.medtalk.model.MedInfo;
+import app.izhang.medtalk.model.TinyDB;
+
+/**
+ * Created by ivanzhang on 5/27/17.
+ *
+ * DetailMedView
+ * - Displays the detailed medical view for the users.
+ *
+ */
 
 public class DetailMedView extends AppCompatActivity {
 
