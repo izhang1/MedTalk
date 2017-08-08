@@ -1,6 +1,8 @@
 package app.izhang.medtalk.view;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -120,18 +123,56 @@ public class MedListFragment extends Fragment {
         return view;
     }
 
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    private void isAdditionDateAvailable(){
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.hasChild("datasetv2")){
+                    // TODO: 8/7/17 Pull in new set of data and add it to our list
+
+                }else{
+                    initListView();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
     public void initView(){
         medInfoList = new ArrayList<>();
         medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
         if(medInfoList.isEmpty()){
-            Log.v("MedListFragment", "Pulling Data");
-            medList.setVisibility(View.INVISIBLE);
-            pullDataFromFirebase();
+            // Check to see if the user has internet data.
+            if(isNetworkAvailable()) {
+                Log.v("MedListFragment", "Pulling Data");
+                medList.setVisibility(View.INVISIBLE);
+                pullDataFromFirebase();
+            }else{
+                Toast.makeText(getContext(), "Please enable Wifi or Data to download the initial medicine data.", Toast.LENGTH_LONG).show();
+            }
 
         }else{
-            adapter = new MedinfoCardViewAdapter(medInfoList, MedListFragment.this);
-            medList.setAdapter(adapter);
+            isAdditionDateAvailable();
         }
+    }
+
+    public void initListView(){
+        adapter = new MedinfoCardViewAdapter(medInfoList, MedListFragment.this);
+        medList.setAdapter(adapter);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

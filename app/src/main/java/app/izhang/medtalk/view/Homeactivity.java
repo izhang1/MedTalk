@@ -13,7 +13,6 @@ import android.os.Bundle;
 import app.izhang.medtalk.R;
 
 
-
 public class Homeactivity extends AppCompatActivity implements MedListFragment.OnFragmentInteractionListener, FavListFragment.OnFragmentInteractionListener {
 
 
