@@ -130,27 +130,30 @@ public class MedListFragment extends Fragment {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
-    private void isAdditionDateAvailable(){
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference();
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.hasChild("datasetv2")){
-                    // TODO: 8/7/17 Pull in new set of data and add it to our list
-
-                }else{
-                    initListView();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-    }
+//    private void isAdditionDateAvailable(){
+//        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        final DatabaseReference myRef = database.getReference();
+//        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                Log.v("MedListFragment", "Checking if extra data is available");
+//                if(dataSnapshot.hasChild("datasetv2")){
+//                    // TODO: 8/7/17 Pull in new set of data and add it to our list
+//                    Log.v("MedListFragment", "Calling the pull data");
+//
+//                    pullAdditionalDataFromFirebase();
+//                }else{
+//                    initListView();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                initListView();
+//            }
+//        });
+//
+//    }
 
     public void initView(){
         medInfoList = new ArrayList<>();
@@ -165,8 +168,10 @@ public class MedListFragment extends Fragment {
                 Toast.makeText(getContext(), "Please enable Wifi or Data to download the initial medicine data.", Toast.LENGTH_LONG).show();
             }
 
+        }else if(!isNetworkAvailable()){
+            initListView();
         }else{
-            isAdditionDateAvailable();
+            initListView();
         }
     }
 
@@ -217,7 +222,6 @@ public class MedListFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 
@@ -254,7 +258,7 @@ public class MedListFragment extends Fragment {
 
                 for(int i = 0; i < medInfoList.size(); i++){
                     MedInfo temp = medInfoList.get(i);
-                    if(temp.getGenericName().toLowerCase().contains(newText) || temp.getTradename().toLowerCase().contains(newText)){
+                    if(temp != null && temp.getGenericName().toLowerCase().contains(newText) || temp.getTradename().toLowerCase().contains(newText)){
                         searchList.add(temp);
                     }
                 }
@@ -267,12 +271,12 @@ public class MedListFragment extends Fragment {
         });
     }
 
-    
+    // TODO: 8/7/17 Change this method to allow a string valye to find the data
     public void pullDataFromFirebase(){
 
         Log.v("MedListFragment", "Start Pulling Data");
 
-        // show loading screen
+        // Initialize main variables
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference myRef = database.getReference();
 
@@ -298,7 +302,6 @@ public class MedListFragment extends Fragment {
                 medList.setVisibility(View.VISIBLE);
                 progress.setVisibility(View.INVISIBLE);
                 Log.v("MedListFragment", "Stop Pulling Data");
-
             }
 
             @Override
@@ -308,6 +311,7 @@ public class MedListFragment extends Fragment {
         });
 
     }
+
 
 
 }
