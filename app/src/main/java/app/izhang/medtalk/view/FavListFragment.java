@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
@@ -47,6 +48,7 @@ public class FavListFragment extends Fragment {
     ArrayList<Integer> favIndexList;
     ArrayList<MedInfo> medInfoList;
     ArrayList<MedInfo> favMedList;
+    RelativeLayout emptyView;
 
     MedinfoCardViewAdapter adapter;
 
@@ -98,6 +100,9 @@ public class FavListFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), 1);
         favList.setLayoutManager(gridLayoutManager);
 
+        emptyView = (RelativeLayout) view.findViewById(R.id.empty_view);
+
+
         initView();
 
         return view;
@@ -106,7 +111,10 @@ public class FavListFragment extends Fragment {
     public void initView(){
         favIndexList = new ArrayList<>();
         favIndexList = db.getListInt(FAV_INFO_KEY);
+
         if(favIndexList.isEmpty()){
+            emptyView.setVisibility(View.VISIBLE);
+
             medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
             favMedList = new ArrayList<>();
             for(int i = 0; i < favIndexList.size(); i++){
@@ -118,6 +126,8 @@ public class FavListFragment extends Fragment {
             adapter.notifyDataSetChanged();
 
         }else{
+            emptyView.setVisibility(View.INVISIBLE);
+
             medInfoList = db.getListObject(MED_INFO_KEY, MedInfo.class);
             favMedList = new ArrayList<>();
             for(int i = 0; i < favIndexList.size(); i++){

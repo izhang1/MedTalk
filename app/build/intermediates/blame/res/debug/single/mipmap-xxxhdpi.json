@@ -4,6 +4,10 @@
         "source": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_empty_favview.png",
+        "source": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/res/mipmap-xxxhdpi/ic_empty_favview.png"
+    },
+    {
         "merged": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
         "source": "/Users/ivanzhang/Documents/Application Development/MedTalk/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     }
