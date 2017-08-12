@@ -1,4 +1,5 @@
 # MedTalk Android 
+[logo]: https://github.com/izhang1/MedTalk/blob/master/app/src/main/res/drawable/app_icon.png "MedTalk Logo"
 
 MedTalk is a paitent counseling app that can be used by any medical professional as well as pateitns. 
 
