@@ -130,30 +130,6 @@ public class MedListFragment extends Fragment {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
-//    private void isAdditionDateAvailable(){
-//        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        final DatabaseReference myRef = database.getReference();
-//        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                Log.v("MedListFragment", "Checking if extra data is available");
-//                if(dataSnapshot.hasChild("datasetv2")){
-//                    // TODO: 8/7/17 Pull in new set of data and add it to our list
-//                    Log.v("MedListFragment", "Calling the pull data");
-//
-//                    pullAdditionalDataFromFirebase();
-//                }else{
-//                    initListView();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                initListView();
-//            }
-//        });
-//
-//    }
 
     public void initView(){
         medInfoList = new ArrayList<>();

@@ -6,4 +6,32 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_detail_med_view">DetailMedView</string>
 
+
+    <string name="empty_view">Favorite medicine to access them here!</string>
+    <string name="header_admin">Administration</string>
+    <string name="admin_empty_stomach">Empty Stomach:</string>
+    <string name="admin_optimal_time">Optimal Time:</string>
+    <string name="admin_technique">Technique:</string>
+    <string name="admin_ref">Administration REF:</string>
+    <string name="header_interaction">Interaction:</string>
+    <string name="inter_food">Food Interactions:</string>
+    <string name="inter_alcohol">Alcohol Interactions:</string>
+    <string name="inter_drug">Drug Interactions:</string>
+    <string name="inter_others">Others:</string>
+    <string name="header_special">Special</string>
+    <string name="special_age">Age:</string>
+    <string name="special_preg">Pregnancy and Lactation:</string>
+    <string name="special_others">Others:</string>
+    <string name="header_side">Side Effects</string>
+    <string name="side_sunlight">Sunlight:</string>
+    <string name="side_sleepy">Sleepy:</string>
+    <string name="side_gi">GI (Gastrointestinal):</string>
+    <string name="side_weight">Weight:</string>
+    <string name="side_sugar">Blood Sugar:</string>
+    <string name="header_param">Parameters</string>
+    <string name="param_monitor">Monitoring Parameters:</string>
+    <string name="header_disease">Disease Specific</string>
+    <string name="header_addinfo">Additional Information</string>
+
+
 </resources>

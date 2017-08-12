@@ -213,7 +213,6 @@ public class DetailMedView extends AppCompatActivity {
             interactionCount++;
         }
 
-        // TODO: 7/8/17  this is messy. fix this.
         String contentInterOthersAll = currentMedInfo.getREFMajorFoodInteractions() + "\n" + currentMedInfo.getREFMajorDrugInteractions();
         String contentInterOthers = currentMedInfo.getREFMajorFoodInteractions();
         if(contentInterOthers == null || contentInterOthers.equals("null") || contentInterOthers.isEmpty()){
